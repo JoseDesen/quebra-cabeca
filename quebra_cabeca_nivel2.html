@@ -21,7 +21,8 @@
 				}
 		</style>
 		<script type="text/javascript">
-		
+		var bugComeco=0;
+		var contagem=0;
 			function verificar(){
 				var a=document.f.a.value;
 				var b=document.f.b.value;
@@ -39,20 +40,98 @@
 				var n=document.f.n.value;
 				var o=document.f.o.value;
 				var p=document.f.p.value;
+				
+				if(bugComeco==1){
+					
 				if(a=="1" && b=="2" && c=="3" && d=="4" && e=="5" && f=="6" && g=="7" && h=="8" && i=="9" && j=="10" && k=="11" && l=="12" && m=="13" && n=="14" && o=="15" && p=="16"){
 					alert("parabéns");
+					bugComeco=0;
 				}
 				if(a=="1" && b=="2" && c=="3" && d=="4" && e=="5" && f=="6" && g=="7" && h=="8" && i=="9" && j=="10" && k=="12" && l=="11" && m=="13" && n=="14" && o=="15" && p=="16"){
+					document.f.k.value="11";
+					document.f.l.value="12";
+					alert("parabéns");
 					
-					alert("Erro na programação, estou tentando consertar esse erro");
-					alert("mas parabéns mesmo assim");
-					alert("tente novamente embaralhar");
+					bugComeco=0;
+				}
+				if(a=="1" && b=="2" && c=="3" && d=="4" && e=="5" && f=="6" && g=="7" && h=="8" && i=="9" && j=="10" && k=="12" && l=="16" && m=="13" && n=="14" && o=="15" && p=="11"){
+					document.f.k.value="11";
+					document.f.p.value="12";
+				}
+				if(a=="1" && b=="2" && c=="3" && d=="4" && e=="5" && f=="6" && g=="7" && h=="8" && i=="9" && j=="10" && k=="16" && l=="12" && m=="13" && n=="14" && o=="15" && p=="11"){
+					document.f.l.value="11";
+					document.f.p.value="12";
 				}
 				if(a=="1" && b=="2" && c=="3" && d=="4" && e=="5" && f=="6" && g=="7" && h=="8" && i=="9" && j=="10" && k=="11" && l=="12" && m=="13" && n=="15" && o=="14" && p=="16"){
-					alert("Erro na programação, estou tentando consertar esse erro");
-					alert("mas parabéns mesmo assim");
-					alert("tente novamente embaralhar");
+					document.f.n.value="14";
+					document.f.o.value="15";
+					alert("parabéns");
+					
+					bugComeco=0;
 				}
+				if(a=="1" && b=="2" && c=="3" && d=="4" && e=="5" && f=="6" && g=="7" && h=="8" && i=="9" && j=="10" && k=="11" && l=="12" && m=="13" && n=="15" && o=="16" && p=="14"){
+					document.f.n.value="14";
+					document.f.p.value="15";
+					
+				}
+				contagem=0;
+				
+				}
+				
+				if(a=="1"){
+						contagem=contagem+1;
+					}
+					if(b=="2"){
+						contagem=contagem+1;
+					}
+					if(c=="3"){
+						contagem=contagem+1;
+					}
+					if(d=="4"){
+						contagem=contagem+1;
+					}
+					if(e=="5"){
+						contagem=contagem+1;
+					}
+					if(f=="6"){
+						contagem=contagem+1;
+					}
+					if(g=="7"){
+						contagem=contagem+1;
+					}
+					if(h=="8"){
+						contagem=contagem+1;
+					}
+					if(i=="9"){
+						contagem=contagem+1;
+					}
+					if(j=="10"){
+						contagem=contagem+1;
+					}
+					if(k=="11"){
+						contagem=contagem+1;
+					}
+					if(l=="12"){
+						contagem=contagem+1;
+					}
+					if(m=="13"){
+						contagem=contagem+1;
+					}
+					if(n=="14"){
+						contagem=contagem+1;
+					}
+					if(o=="15"){
+						contagem=contagem+1;
+					}
+					if(p=="16"){
+					contagem=contagem+1;
+					}
+					
+					if(contagem<=4){
+						bugComeco=1;
+					}
+					contagem=0;
+					
 			}
 			
 			function mover(peca){
@@ -400,6 +479,7 @@
 				verificar();
 			}
 			function embaralhar(){
+				bugcomeco=1;
 				document.getElementById('a').style.background="white";
 				document.getElementById('b').style.background="white";
 				document.getElementById('c').style.background="white";
