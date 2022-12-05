@@ -21,7 +21,8 @@
 				}
 		</style>
 		<script type="text/javascript">
-		
+		var bugComeco=0;
+		var contagem=0;
 			function verificar(){
 				var a=document.f.a.value;
 				var b=document.f.b.value;
@@ -32,21 +33,60 @@
 				var g=document.f.g.value;
 				var h=document.f.h.value;
 				var i=document.f.i.value;
-				
+				if(bugComeco==1){
 				if(a=="1" && b=="2" && c=="3" && d=="4" && e=="5" && f=="6" && g=="7" && h=="8" && i=="9" ){
 					alert("parabéns");
+					bugComeco=0;
 				}
-				if(a=="1" && b=="2" && c=="3" && d=="4" && e=="6" && f=="5" && g=="7" && h=="8" && i=="9" ){
-					alert("Erro na programação, estou tentando consertar esse erro");
-					alert("mas parabéns mesmo assim");
-					alert("tente novamente embaralhar");
+				if(a=="1" && b=="2" && c=="3" && d=="4" && e=="6" && f=="9" && g=="7" && h=="8" && i=="5" ){
+					document.f.e.value="5";
+					document.f.i.value="6";
 				}
 				if(a=="1" && b=="2" && c=="3" && d=="4" && e=="5" && f=="6" && g=="8" && h=="7" && i=="9" ){
-				alert("Erro na programação, estou tentando consertar esse erro");
-				alert("mas parabéns mesmo assim");
-				alert("tente novamente embaralhar");
+					document.f.g.value="7";
+					document.f.h.value="8";
+					alert("parabéns");
+				bugComeco=0;
 				}
-				
+				if(a=="1" && b=="2" && c=="3" && d=="4" && e=="5" && f=="6" && g=="8" && h=="9" && i=="7" ){
+					document.f.g.value="7";
+					document.f.i.value="8";
+				}
+				contagem=0;
+				}
+				if(a=="1"){
+						contagem=contagem+1;
+					}
+					if(b=="2"){
+						contagem=contagem+1;
+					}
+					if(c=="3"){
+						contagem=contagem+1;
+					}
+					if(d=="4"){
+						contagem=contagem+1;
+					}
+					if(e=="5"){
+						contagem=contagem+1;
+					}
+					if(f=="6"){
+						contagem=contagem+1;
+					}
+					if(g=="7"){
+						contagem=contagem+1;
+					}
+					if(h=="8"){
+						contagem=contagem+1;
+					}
+					if(i=="9"){
+						contagem=contagem+1;
+					}
+					
+					
+					if(contagem<=2){
+						bugComeco=1;
+					}
+					contagem=0;
 			}
 			
 			function mover(peca){
@@ -235,6 +275,7 @@
 				verificar();
 			}
 			function embaralhar(){
+				bugComeco=1;
 				document.getElementById('a').style.background="white";
 				document.getElementById('b').style.background="white";
 				document.getElementById('c').style.background="white";
