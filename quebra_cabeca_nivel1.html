@@ -36,32 +36,10 @@
 				if(bugComeco==1){
 				if(a=="1" && b=="2" && c=="3" && d=="4" && e=="5" && f=="6" && g=="7" && h=="8" && i=="9" ){
 					alert("parabéns");
+					document.f1.bagunca.disabled=false;
 					bugComeco=0;
 				}
-				if(a=="1" && b=="2" && c=="3" && d=="4" && e=="6" && f=="5" && g=="7" && h=="8" && i=="9" ){
-					document.f.e.value="5";
-					document.f.f.value="6";
-					alert("parabéns");
-				bugComeco=0;
-				}
-				if(a=="1" && b=="2" && c=="3" && d=="4" && e=="6" && f=="5" && g=="7" && h=="9" && i=="8" ){
-					document.f.e.value="5";
-					document.f.f.value="6";
-				}
-				if(a=="1" && b=="2" && c=="3" && d=="4" && e=="6" && f=="9" && g=="7" && h=="8" && i=="5" ){
-					document.f.e.value="5";
-					document.f.i.value="6";
-				}
-				if(a=="1" && b=="2" && c=="3" && d=="4" && e=="5" && f=="6" && g=="8" && h=="7" && i=="9" ){
-					document.f.g.value="7";
-					document.f.h.value="8";
-					alert("parabéns");
-				bugComeco=0;
-				}
-				if(a=="1" && b=="2" && c=="3" && d=="4" && e=="5" && f=="6" && g=="8" && h=="9" && i=="7" ){
-					document.f.g.value="7";
-					document.f.i.value="8";
-				}
+				
 				contagem=0;
 				}
 				if(a=="1"){
@@ -285,7 +263,9 @@
 				verificar();
 			}
 			function embaralhar(){
-				bugComeco=1;
+				bugcomeco=1;
+				document.f1.bagunca.disabled=true;
+				
 				document.getElementById('a').style.background="white";
 				document.getElementById('b').style.background="white";
 				document.getElementById('c').style.background="white";
@@ -296,41 +276,136 @@
 				document.getElementById('h').style.background="white";
 				document.getElementById('i').style.background="white";
 				
-				var array=["a","a","a","a","a","a","a","a","a"];
-				for(a=1;a<10000;a++){
-					var b=Math.floor(Math.random() * 9)+1;
-					if(array[0]=="a"){
-						array[0]=b;
-					}else if(array[1]=="a" && array[0]!=b){
-						array[1]=b;
-					}else if(array[2]=="a" && array[0]!=b && array[1]!=b ){
-						array[2]=b;
-					}else if(array[3]=="a" && array[0]!=b && array[1]!=b  && array[2]!=b ){
-						array[3]=b;
-					}else if(array[4]=="a" && array[0]!=b && array[1]!=b  && array[2]!=b && array[3]!=b){
-						array[4]=b;
-					}else if(array[5]=="a" && array[0]!=b && array[1]!=b  && array[2]!=b && array[3]!=b && array[4]!=b  ){
-						array[5]=b;
-					}else if(array[6]=="a" && array[0]!=b && array[1]!=b  && array[2]!=b && array[3]!=b && array[4]!=b  && array[5]!=b ){
-						array[6]=b;
-					}else if(array[7]=="a" && array[0]!=b && array[1]!=b  && array[2]!=b && array[3]!=b && array[4]!=b  && array[5]!=b  && array[6]!=b  ){
-						array[7]=b;
-					}else if(array[8]=="a" && array[0]!=b && array[1]!=b  && array[2]!=b && array[3]!=b && array[4]!=b  && array[5]!=b  && array[6]!=b && array[7]!=b  ){
-						array[8]=b;
-					}else if(array[9]=="a" && array[0]!=b && array[1]!=b  && array[2]!=b && array[3]!=b && array[4]!=b  && array[5]!=b  && array[6]!=b && array[7]!=b  && array[8]!=b ){
-						array[9]=b;
+				
+				for(n=1;n<1000;n++){
+					var ale=Math.floor(Math.random() * 4)+1;
+					var a=document.f.a.value;
+					var b=document.f.b.value;
+					var c=document.f.c.value;
+					var d=document.f.d.value;
+					var e=document.f.e.value;
+					var f=document.f.f.value;
+					var g=document.f.g.value;
+					var h=document.f.h.value;
+					var i=document.f.i.value;
+				
+				
+				if(a=="9"){
+					if(ale=="2"){
+						document.f.a.value=b;
+						document.f.b.value="9";
+					}
+					if(ale=="4"){
+						document.f.a.value=d;
+						document.f.d.value="9";
 					}
 				}
+				if(b=="9"){
+					if(ale=="1"){
+						document.f.b.value=a;
+						document.f.a.value="9";
+					}
+					if(ale=="2"){
+						document.f.b.value=c;
+						document.f.c.value="9";
+					}
+					if(ale=="4"){
+						document.f.b.value=e;
+						document.f.e.value="9";
+					}
+				}
+				if(c=="9"){
+					if(ale=="1"){
+						document.f.c.value=b;
+						document.f.b.value="9";
+					}
+					if(ale=="4"){
+						document.f.c.value=f;
+						document.f.f.value="9";
+					}
+				}
+				if(d=="9"){
+					if(ale=="2"){
+						document.f.d.value=e;
+						document.f.e.value="9";
+					}
+					if(ale=="3"){
+						document.f.d.value=a;
+						document.f.a.value="9";
+					}
+					if(ale=="4"){
+						document.f.d.value=g;
+						document.f.g.value="9";
+					}
+				}
+				if(e=="9"){
+					if(ale=="1"){
+						document.f.e.value=d;
+						document.f.d.value="9";
+					}
+					if(ale=="2"){
+						document.f.e.value=f;
+						document.f.f.value="9";
+					}
+					if(ale=="3"){
+						document.f.e.value=b;
+						document.f.b.value="9";
+					}
+					if(ale=="4"){
+						document.f.e.value=h;
+						document.f.h.value="9";
+					}
+				}
+				if(f=="9"){
+				if(ale=="1"){
+						document.f.f.value=e;
+						document.f.e.value="9";
+					}
+					if(ale=="3"){
+						document.f.f.value=c;
+						document.f.c.value="9";
+					}
+					if(ale=="4"){
+						document.f.f.value=i;
+						document.f.i.value="9";
+					}
+				}
+				if(g=="9"){
+				if(ale=="2"){
+						document.f.g.value=h;
+						document.f.h.value="9";
+					}
+					if(ale=="3"){
+						document.f.g.value=d;
+						document.f.d.value="9";
+					}
+				}
+				if(h=="9"){
+					if(ale=="1"){
+						document.f.h.value=g;
+						document.f.g.value="9";
+					}
+					if(ale=="2"){
+						document.f.h.value=i;
+						document.f.i.value="9";
+					}
+					if(ale=="3"){
+						document.f.h.value=e;
+						document.f.e.value="9";
+					}
+				}
+				if(i=="9"){
+					if(ale=="1"){
+						document.f.i.value=h;
+						document.f.h.value="9";
+					}
+					if(ale=="3"){
+						document.f.i.value=f;
+						document.f.f.value="9";
+					}
+				}
+			}
 				
-				document.f.a.value=array[0];
-				document.f.b.value=array[1];
-				document.f.c.value=array[2];
-				document.f.d.value=array[3];
-				document.f.e.value=array[4];
-				document.f.f.value=array[5];
-				document.f.g.value=array[6];
-				document.f.h.value=array[7];
-				document.f.i.value=array[8];
 				
 				var a=document.f.a.value;
 				var b=document.f.b.value;
@@ -341,6 +416,7 @@
 				var g=document.f.g.value;
 				var h=document.f.h.value;
 				var i=document.f.i.value;
+				
 				
 				if(a=="9"){
 				document.getElementById('a').style.background="black";
@@ -389,9 +465,8 @@
 	
 	<br>
 	</form>
-	<form>
-	<input type="button" value="embaralhar" onclick="embaralhar()" style="background-color:red; width:300px;">
+	<form name="f1">
+	<input type="button" name="bagunca" value="embaralhar" onclick="embaralhar()" style="background-color:red; width:300px;">
 	</form>
-<h2 style="background-color:red;color:white;position:absolute;top:90%;right:25%">Programado por :José Desenvolvedor</h2>
 </body>
 </html>
