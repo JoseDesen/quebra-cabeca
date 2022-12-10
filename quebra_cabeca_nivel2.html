@@ -46,34 +46,9 @@
 				if(a=="1" && b=="2" && c=="3" && d=="4" && e=="5" && f=="6" && g=="7" && h=="8" && i=="9" && j=="10" && k=="11" && l=="12" && m=="13" && n=="14" && o=="15" && p=="16"){
 					alert("parabéns");
 					bugComeco=0;
+					document.f1.bagunca.disabled=false;
 				}
-				if(a=="1" && b=="2" && c=="3" && d=="4" && e=="5" && f=="6" && g=="7" && h=="8" && i=="9" && j=="10" && k=="12" && l=="11" && m=="13" && n=="14" && o=="15" && p=="16"){
-					document.f.k.value="11";
-					document.f.l.value="12";
-					alert("parabéns");
-					
-					bugComeco=0;
-				}
-				if(a=="1" && b=="2" && c=="3" && d=="4" && e=="5" && f=="6" && g=="7" && h=="8" && i=="9" && j=="10" && k=="12" && l=="16" && m=="13" && n=="14" && o=="15" && p=="11"){
-					document.f.k.value="11";
-					document.f.p.value="12";
-				}
-				if(a=="1" && b=="2" && c=="3" && d=="4" && e=="5" && f=="6" && g=="7" && h=="8" && i=="9" && j=="10" && k=="16" && l=="12" && m=="13" && n=="14" && o=="15" && p=="11"){
-					document.f.l.value="11";
-					document.f.p.value="12";
-				}
-				if(a=="1" && b=="2" && c=="3" && d=="4" && e=="5" && f=="6" && g=="7" && h=="8" && i=="9" && j=="10" && k=="11" && l=="12" && m=="13" && n=="15" && o=="14" && p=="16"){
-					document.f.n.value="14";
-					document.f.o.value="15";
-					alert("parabéns");
-					
-					bugComeco=0;
-				}
-				if(a=="1" && b=="2" && c=="3" && d=="4" && e=="5" && f=="6" && g=="7" && h=="8" && i=="9" && j=="10" && k=="11" && l=="12" && m=="13" && n=="15" && o=="16" && p=="14"){
-					document.f.n.value="14";
-					document.f.p.value="15";
-					
-				}
+				
 				contagem=0;
 				
 				}
@@ -480,6 +455,7 @@
 			}
 			function embaralhar(){
 				bugcomeco=1;
+				document.f1.bagunca.disabled=true;
 				document.getElementById('a').style.background="white";
 				document.getElementById('b').style.background="white";
 				document.getElementById('c').style.background="white";
@@ -496,62 +472,255 @@
 				document.getElementById('n').style.background="white";
 				document.getElementById('o').style.background="white";
 				document.getElementById('p').style.background="white";
-				var array=["a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a"];
-				for(a=1;a<10000;a++){
-					var b=Math.floor(Math.random() * 16)+1;
-					if(array[0]=="a"){
-						array[0]=b;
-					}else if(array[1]=="a" && array[0]!=b){
-						array[1]=b;
-					}else if(array[2]=="a" && array[0]!=b && array[1]!=b ){
-						array[2]=b;
-					}else if(array[3]=="a" && array[0]!=b && array[1]!=b  && array[2]!=b ){
-						array[3]=b;
-					}else if(array[4]=="a" && array[0]!=b && array[1]!=b  && array[2]!=b && array[3]!=b){
-						array[4]=b;
-					}else if(array[5]=="a" && array[0]!=b && array[1]!=b  && array[2]!=b && array[3]!=b && array[4]!=b  ){
-						array[5]=b;
-					}else if(array[6]=="a" && array[0]!=b && array[1]!=b  && array[2]!=b && array[3]!=b && array[4]!=b  && array[5]!=b ){
-						array[6]=b;
-					}else if(array[7]=="a" && array[0]!=b && array[1]!=b  && array[2]!=b && array[3]!=b && array[4]!=b  && array[5]!=b  && array[6]!=b  ){
-						array[7]=b;
-					}else if(array[8]=="a" && array[0]!=b && array[1]!=b  && array[2]!=b && array[3]!=b && array[4]!=b  && array[5]!=b  && array[6]!=b && array[7]!=b  ){
-						array[8]=b;
-					}else if(array[9]=="a" && array[0]!=b && array[1]!=b  && array[2]!=b && array[3]!=b && array[4]!=b  && array[5]!=b  && array[6]!=b && array[7]!=b  && array[8]!=b ){
-						array[9]=b;
-					}else if(array[10]=="a" && array[0]!=b && array[1]!=b  && array[2]!=b && array[3]!=b && array[4]!=b  && array[5]!=b  && array[6]!=b && array[7]!=b  && array[8]!=b && array[9]!=b   ){
-						array[10]=b;
-					}else if(array[11]=="a" && array[0]!=b && array[1]!=b  && array[2]!=b && array[3]!=b && array[4]!=b  && array[5]!=b  && array[6]!=b && array[7]!=b  && array[8]!=b && array[9]!=b  && array[10]!=b  ){
-						array[11]=b;
-					}else if(array[12]=="a" && array[0]!=b && array[1]!=b  && array[2]!=b && array[3]!=b && array[4]!=b  && array[5]!=b  && array[6]!=b && array[7]!=b  && array[8]!=b && array[9]!=b  && array[10]!=b && array[11]!=b    ){
-						array[12]=b;
-					}else if(array[13]=="a" && array[0]!=b && array[1]!=b  && array[2]!=b && array[3]!=b && array[4]!=b  && array[5]!=b  && array[6]!=b && array[7]!=b  && array[8]!=b && array[9]!=b  && array[10]!=b && array[11]!=b  && array[12]!=b  ){
-						array[13]=b;
-					}else if(array[14]=="a" && array[0]!=b && array[1]!=b  && array[2]!=b && array[3]!=b && array[4]!=b  && array[5]!=b  && array[6]!=b && array[7]!=b  && array[8]!=b && array[9]!=b  && array[10]!=b && array[11]!=b  && array[12]!=b && array[13]!=b    ){
-						array[14]=b;
-					}else if(array[15]=="a" && array[0]!=b && array[1]!=b  && array[2]!=b && array[3]!=b && array[4]!=b  && array[5]!=b  && array[6]!=b && array[7]!=b  && array[8]!=b && array[9]!=b  && array[10]!=b && array[11]!=b  && array[12]!=b && array[13]!=b    && array[14]!=b ){
-						array[15]=b;
-					}else if(array[16]=="a" && array[0]!=b && array[1]!=b  && array[2]!=b && array[3]!=b && array[4]!=b  && array[5]!=b  && array[6]!=b && array[7]!=b  && array[8]!=b && array[9]!=b  && array[10]!=b && array[11]!=b  && array[12]!=b && array[13]!=b  && array[14]!=b   && array[15]!=b ){
-						array[16]=b;
+			
+				for(v=1;v<1000;v++){
+					var ale=Math.floor(Math.random() * 4)+1;
+					var a=document.f.a.value;
+				var b=document.f.b.value;
+				var c=document.f.c.value;
+				var d=document.f.d.value;
+				var e=document.f.e.value;
+				var f=document.f.f.value;
+				var g=document.f.g.value;
+				var h=document.f.h.value;
+				var i=document.f.i.value;
+				var j=document.f.j.value;
+				var k=document.f.k.value;
+				var l=document.f.l.value;
+				var m=document.f.m.value;
+				var n=document.f.n.value;
+				var o=document.f.o.value;
+				var p=document.f.p.value;
+				
+				
+				if(a=="16"){
+					if(ale=="2"){
+						document.f.a.value=b;
+						document.f.b.value="16";
+					}
+					if(ale=="4"){
+						document.f.a.value=e;
+						document.f.e.value="16";
+					}
+				}
+				if(b=="16"){
+					if(ale=="1"){
+						document.f.b.value=a;
+						document.f.a.value="16";
+					}
+					if(ale=="2"){
+						document.f.b.value=c;
+						document.f.c.value="16";
+					}
+					if(ale=="4"){
+						document.f.b.value=f;
+						document.f.f.value="16";
+					}
+				}
+				if(c=="16"){
+					if(ale=="1"){
+						document.f.c.value=b;
+						document.f.b.value="16";
+					}
+					if(ale=="2"){
+						document.f.c.value=d;
+						document.f.d.value="16";
+					}
+					if(ale=="4"){
+						document.f.c.value=g;
+						document.f.g.value="16";
+					}
+				}
+				if(d=="16"){
+					if(ale=="1"){
+						document.f.d.value=c;
+						document.f.c.value="16";
+					}
+					if(ale=="4"){
+						document.f.d.value=h;
+						document.f.h.value="16";
+					}
+				}
+				if(e=="16"){
+					if(ale=="2"){
+						document.f.e.value=f;
+						document.f.f.value="16";
+					}
+					if(ale=="3"){
+						document.f.e.value=a;
+						document.f.a.value="16";
+					}
+					if(ale=="4"){
+						document.f.e.value=i;
+						document.f.i.value="16";
+					}
+				}
+				if(f=="16"){
+					if(ale=="1"){
+						document.f.f.value=e;
+						document.f.e.value="16";
+					}
+					if(ale=="2"){
+						document.f.f.value=g;
+						document.f.g.value="16";
+					}
+					if(ale=="3"){
+						document.f.f.value=b;
+						document.f.b.value="16";
+					}
+					if(ale=="4"){
+						document.f.f.value=j;
+						document.f.j.value="16";
+					}
+				}
+				if(g=="16"){
+					if(ale=="1"){
+						document.f.g.value=f;
+						document.f.f.value="16";
+					}
+					if(ale=="2"){
+						document.f.g.value=h;
+						document.f.h.value="16";
+					}
+					if(ale=="3"){
+						document.f.g.value=c;
+						document.f.c.value="16";
+					}
+					if(ale=="4"){
+						document.f.g.value=k;
+						document.f.k.value="16";
+					}
+				}
+				if(h=="16"){
+				if(ale=="1"){
+						document.f.h.value=g;
+						document.f.g.value="16";
+					}
+					if(ale=="3"){
+						document.f.h.value=d;
+						document.f.d.value="16";
+					}
+					if(ale=="4"){
+						document.f.h.value=l;
+						document.f.l.value="16";
+					}
+				}
+				if(i=="16"){
+					if(ale=="2"){
+						document.f.i.value=j;
+						document.f.j.value="16";
+					}
+					if(ale=="3"){
+						document.f.i.value=e;
+						document.f.e.value="16";
+					}
+					if(ale=="4"){
+						document.f.i.value=m;
+						document.f.m.value="16";
+					}
+				}
+				if(j=="16"){
+					if(ale=="1"){
+						document.f.j.value=i;
+						document.f.i.value="16";
+					}
+					if(ale=="2"){
+						document.f.j.value=k;
+						document.f.k.value="16";
+					}
+					if(ale=="3"){
+						document.f.j.value=f;
+						document.f.f.value="16";
+					}
+					if(ale=="4"){
+						document.f.j.value=n;
+						document.f.n.value="16";
+					}
+				}
+				if(k=="16"){
+					if(ale=="1"){
+						document.f.k.value=j;
+						document.f.j.value="16";
+					}
+					if(ale=="2"){
+						document.f.k.value=l;
+						document.f.l.value="16";
+					}
+					if(ale=="3"){
+						document.f.k.value=g;
+						document.f.g.value="16";
+					}
+					if(ale=="4"){
+						document.f.k.value=o;
+						document.f.o.value="16";
+					}
+				}
+				if(l=="16"){
+				if(ale=="1"){
+						document.f.l.value=k;
+						document.f.k.value="16";
+					}
+					if(ale=="3"){
+						document.f.l.value=h;
+						document.f.h.value="16";
+					}
+					if(ale=="4"){
+						document.f.l.value=p;
+						document.f.p.value="16";
 					}
 				}
 				
-				document.f.a.value=array[0];
-				document.f.b.value=array[1];
-				document.f.c.value=array[2];
-				document.f.d.value=array[3];
-				document.f.e.value=array[4];
-				document.f.f.value=array[5];
-				document.f.g.value=array[6];
-				document.f.h.value=array[7];
-				document.f.i.value=array[8];
-				document.f.j.value=array[9];
-				document.f.k.value=array[10];
-				document.f.l.value=array[11];
-				document.f.m.value=array[12];
-				document.f.n.value=array[13];
-				document.f.o.value=array[14];
-				document.f.p.value=array[15];
+				
+				
+				if(m=="16"){
+				if(ale=="2"){
+						document.f.m.value=n;
+						document.f.n.value="16";
+					}
+					if(ale=="3"){
+						document.f.m.value=i;
+						document.f.i.value="16";
+					}
+				}
+				if(n=="16"){
+					if(ale=="1"){
+						document.f.n.value=m;
+						document.f.m.value="16";
+					}
+					if(ale=="2"){
+						document.f.n.value=o;
+						document.f.o.value="16";
+					}
+					if(ale=="3"){
+						document.f.n.value=j;
+						document.f.j.value="16";
+					}
+				}
+				if(o=="16"){
+					if(ale=="1"){
+						document.f.o.value=n;
+						document.f.n.value="16";
+					}
+					if(ale=="2"){
+						document.f.o.value=p;
+						document.f.p.value="16";
+					}
+					if(ale=="3"){
+						document.f.o.value=k;
+						document.f.k.value="16";
+					}
+				}
+				if(p=="16"){
+					if(ale=="1"){
+						document.f.p.value=o;
+						document.f.o.value="16";
+					}
+					if(ale=="3"){
+						document.f.p.value=l;
+						document.f.l.value="16";
+					}
+				}
+			}
 				var a=document.f.a.value;
 				var b=document.f.b.value;
 				var c=document.f.c.value;
@@ -568,6 +737,7 @@
 				var n=document.f.n.value;
 				var o=document.f.o.value;
 				var p=document.f.p.value;
+				
 				if(a=="16"){
 				document.getElementById('a').style.background="black";
 				}
@@ -644,8 +814,8 @@
 	<input type="button" name="p" id="p" value="16" onclick="mover('p')" style="background-color:black;">
 	<br>
 	</form>
-	<form>
-	<input type="button" value="embaralhar" onclick="embaralhar()" style="background-color:red; width:300px;">
+	<form name="f1">
+	<input type="button" name="bagunca" value="embaralhar" onclick="embaralhar()" style="background-color:red; width:300px;">
 	</form>
 </body>
 </html>
