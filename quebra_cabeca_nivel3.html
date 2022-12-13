@@ -1,24 +1,1291 @@
 <html>
 	<head>
-		<meta charset="UTF-8">
-		<title>quebra cabeça - nivel dificil</title>
+		<meta charset="UTF-8"/>
+		<title>jogo dos 24</title>
+		</head>
 		<style>
-			*{
-				text-align:center;
+		*{
+		text-align:center;
+		}
+		input{
+				height:100px;
+				width:100px;
+				font-size:50px;
+				background-color:white;
+				color:black;
 			}
-			h2{
-				color:red;
-			}
+			form{
+				background-color:black;
+				margin-left:23%;
+				margin-right:23%;
+				}
 		</style>
-		<script>
+		<script type="text/javascript">
+		var bugComeco=0;
+		var contagem=0;
+			function verificar(){
+				var a=document.f.a.value;
+				var b=document.f.b.value;
+				var c=document.f.c.value;
+				var d=document.f.d.value;
+				var e=document.f.e.value;
+				var f=document.f.f.value;
+				var g=document.f.g.value;
+				var h=document.f.h.value;
+				var i=document.f.i.value;
+				var j=document.f.j.value;
+				var k=document.f.k.value;
+				var l=document.f.l.value;
+				var m=document.f.m.value;
+				var n=document.f.n.value;
+				var o=document.f.o.value;
+				var p=document.f.p.value;
+				var q=document.f.q.value;
+				var r=document.f.r.value;
+				var s=document.f.s.value;
+				var t=document.f.t.value;
+				var u=document.f.u.value;
+				var v=document.f.v.value;
+				var w=document.f.w.value;
+				var x=document.f.x.value;
+				var y=document.f.y.value;
+				
+				if(bugComeco==1){
+				if(a=="1" && b=="2" && c=="3" && d=="4" && e=="5" && f=="6" && g=="7" && h=="8" && i=="9" && j=="10" && k=="11" && l=="12" && m=="13" && n=="14" && o=="15" && p=="16"  && q=="17" && r=="18" && s=="19" && t=="20" && u=="21" && v=="22" && w=="23" && x=="24" && y=="25" ){
+					alert("parabéns");
+					bugComeco=0;
+					document.f1.bagunca.disabled=false;
+				}
+				
+				contagem=0;
+				
+				}
+				
+				if(a=="1"){
+						contagem=contagem+1;
+					}
+					if(b=="2"){
+						contagem=contagem+1;
+					}
+					if(c=="3"){
+						contagem=contagem+1;
+					}
+					if(d=="4"){
+						contagem=contagem+1;
+					}
+					if(e=="5"){
+						contagem=contagem+1;
+					}
+					if(f=="6"){
+						contagem=contagem+1;
+					}
+					if(g=="7"){
+						contagem=contagem+1;
+					}
+					if(h=="8"){
+						contagem=contagem+1;
+					}
+					if(i=="9"){
+						contagem=contagem+1;
+					}
+					if(j=="10"){
+						contagem=contagem+1;
+					}
+					if(k=="11"){
+						contagem=contagem+1;
+					}
+					if(l=="12"){
+						contagem=contagem+1;
+					}
+					if(m=="13"){
+						contagem=contagem+1;
+					}
+					if(n=="14"){
+						contagem=contagem+1;
+					}
+					if(o=="15"){
+						contagem=contagem+1;
+					}
+					if(p=="16"){
+					contagem=contagem+1;
+					}
+					if(q=="17"){
+						contagem=contagem+1;
+					}
+					if(r=="18"){
+						contagem=contagem+1;
+					}
+					if(s=="19"){
+						contagem=contagem+1;
+					}
+					if(t=="20"){
+						contagem=contagem+1;
+					}
+					if(u=="21"){
+						contagem=contagem+1;
+					}
+					if(v=="22"){
+						contagem=contagem+1;
+					}
+					if(w=="23"){
+						contagem=contagem+1;
+					}
+					if(x=="24"){
+						contagem=contagem+1;
+					}
+					if(y=="25"){
+						contagem=contagem+1;
+					}
+					
+					if(contagem<=4){
+						bugComeco=1;
+						
+					}
+					contagem=0;
+					
+			}
 			
+			function mover(peca){
+				var a=document.f.a.value;
+				var b=document.f.b.value;
+				var c=document.f.c.value;
+				var d=document.f.d.value;
+				var e=document.f.e.value;
+				var f=document.f.f.value;
+				var g=document.f.g.value;
+				var h=document.f.h.value;
+				var i=document.f.i.value;
+				var j=document.f.j.value;
+				var k=document.f.k.value;
+				var l=document.f.l.value;
+				var m=document.f.m.value;
+				var n=document.f.n.value;
+				var o=document.f.o.value;
+				var p=document.f.p.value;
+				var q=document.f.q.value;
+				var r=document.f.r.value;
+				var s=document.f.s.value;
+				var t=document.f.t.value;
+				var u=document.f.u.value;
+				var v=document.f.v.value;
+				var w=document.f.w.value;
+				var x=document.f.x.value;
+				var y=document.f.y.value;
+				
+				
+				if(peca=="a"){
+					if(b=="25"){
+						document.f.b.value=a;
+						document.f.a.value="25";
+						document.getElementById('a').style.background="black";
+						document.getElementById('b').style.background="white";
+					}
+					if(f=="25"){
+						document.f.f.value=a;
+						document.f.a.value="25";
+						document.getElementById('a').style.background="black";
+						document.getElementById('f').style.background="white";
+					}
+				}
+				if(peca=="b"){
+					if(a=="25"){
+						document.f.a.value=b;
+						document.f.b.value="25";
+						document.getElementById('b').style.background="black";
+						document.getElementById('a').style.background="white";
+					}
+					if(c=="25"){
+						document.f.c.value=b;
+						document.f.b.value="25";
+						document.getElementById('b').style.background="black";
+						document.getElementById('c').style.background="white";
+					}
+					if(g=="25"){
+						document.f.g.value=b;
+						document.f.b.value="25";
+						document.getElementById('b').style.background="black";
+						document.getElementById('g').style.background="white";
+						}
+				}
+				
+				if(peca=="c"){
+					if(b=="25"){
+						document.f.b.value=c;
+						document.f.c.value="25";
+						document.getElementById('c').style.background="black";
+						document.getElementById('b').style.background="white";
+					}
+					if(d=="25"){
+						document.f.d.value=c;
+						document.f.c.value="25";
+						document.getElementById('c').style.background="black";
+						document.getElementById('d').style.background="white";
+					}
+					if(h=="25"){
+						document.f.h.value=c;
+						document.f.c.value="25";
+						document.getElementById('c').style.background="black";
+						document.getElementById('h').style.background="white";
+						}
+				}
+				if(peca=="d"){
+					if(c=="25"){
+						document.f.c.value=d;
+						document.f.d.value="25";
+						document.getElementById('d').style.background="black";
+						document.getElementById('c').style.background="white";
+					}
+					if(e=="25"){
+						document.f.e.value=d;
+						document.f.d.value="25";
+						document.getElementById('d').style.background="black";
+						document.getElementById('e').style.background="white";
+					}
+					if(i=="25"){
+						document.f.i.value=d;
+						document.f.d.value="25";
+						document.getElementById('d').style.background="black";
+						document.getElementById('i').style.background="white";
+						}
+				}
+				if(peca=="e"){
+					if(d=="25"){
+						document.f.d.value=e;
+						document.f.e.value="25";
+						document.getElementById('e').style.background="black";
+						document.getElementById('d').style.background="white";
+					}
+					if(j=="25"){
+						document.f.j.value=e;
+						document.f.e.value="25";
+						document.getElementById('e').style.background="black";
+						document.getElementById('j').style.background="white";
+					}
+				}
+				
+				if(peca=="f"){
+					if(g=="25"){
+						document.f.g.value=f;
+						document.f.f.value="25";
+						document.getElementById('f').style.background="black";
+						document.getElementById('g').style.background="white";
+					}
+					if(a=="25"){
+						document.f.a.value=f;
+						document.f.f.value="25";
+						document.getElementById('f').style.background="black";
+						document.getElementById('a').style.background="white";
+					}
+					if(k=="25"){
+						document.f.k.value=f;
+						document.f.f.value="25";
+						document.getElementById('f').style.background="black";
+						document.getElementById('k').style.background="white";
+						}
+				}
+				if(peca=="g"){
+					if(f=="25"){
+						document.f.f.value=g;
+						document.f.g.value="25";
+						document.getElementById('g').style.background="black";
+						document.getElementById('f').style.background="white";
+					}
+					if(h=="25"){
+						document.f.h.value=g;
+						document.f.g.value="25";
+						document.getElementById('g').style.background="black";
+						document.getElementById('h').style.background="white";
+					}
+					if(b=="25"){
+						document.f.b.value=g;
+						document.f.g.value="25";
+						document.getElementById('g').style.background="black";
+						document.getElementById('b').style.background="white";
+					}
+					if(l=="25"){
+						document.f.l.value=g;
+						document.f.g.value="25";
+						document.getElementById('g').style.background="black";
+						document.getElementById('l').style.background="white";
+						}
+				}
+				if(peca=="h"){
+					if(g=="25"){
+						document.f.g.value=h;
+						document.f.h.value="25";
+						document.getElementById('h').style.background="black";
+						document.getElementById('g').style.background="white";
+					}
+					if(i=="25"){
+						document.f.i.value=h;
+						document.f.h.value="25";
+						document.getElementById('h').style.background="black";
+						document.getElementById('i').style.background="white";
+					}
+					if(c=="25"){
+						document.f.c.value=h;
+						document.f.h.value="25";
+						document.getElementById('h').style.background="black";
+						document.getElementById('c').style.background="white";
+					}
+					if(m=="25"){
+						document.f.m.value=h;
+						document.f.h.value="25";
+						document.getElementById('h').style.background="black";
+						document.getElementById('m').style.background="white";
+						}
+				}
+				if(peca=="i"){
+					if(h=="25"){
+						document.f.h.value=i;
+						document.f.i.value="25";
+						document.getElementById('i').style.background="black";
+						document.getElementById('h').style.background="white";
+					}
+					if(j=="25"){
+						document.f.j.value=i;
+						document.f.i.value="25";
+						document.getElementById('i').style.background="black";
+						document.getElementById('j').style.background="white";
+					}
+					if(d=="25"){
+						document.f.d.value=i;
+						document.f.i.value="25";
+						document.getElementById('i').style.background="black";
+						document.getElementById('d').style.background="white";
+					}
+					if(n=="25"){
+						document.f.n.value=i;
+						document.f.i.value="25";
+						document.getElementById('i').style.background="black";
+						document.getElementById('n').style.background="white";
+						}
+				}
+				if(peca=="j"){
+					if(i=="25"){
+						document.f.i.value=j;
+						document.f.j.value="25";
+						document.getElementById('j').style.background="black";
+						document.getElementById('i').style.background="white";
+					}
+					if(e=="25"){
+						document.f.e.value=j;
+						document.f.j.value="25";
+						document.getElementById('j').style.background="black";
+						document.getElementById('e').style.background="white";
+					}
+					if(o=="25"){
+						document.f.o.value=j;
+						document.f.j.value="25";
+						document.getElementById('j').style.background="black";
+						document.getElementById('o').style.background="white";
+						}
+				}
+				
+				if(peca=="k"){
+					if(l=="25"){
+						document.f.l.value=k;
+						document.f.k.value="25";
+						document.getElementById('k').style.background="black";
+						document.getElementById('l').style.background="white";
+					}
+					if(f=="25"){
+						document.f.f.value=k;
+						document.f.k.value="25";
+						document.getElementById('k').style.background="black";
+						document.getElementById('f').style.background="white";
+					}
+					if(p=="25"){
+						document.f.p.value=k;
+						document.f.k.value="25";
+						document.getElementById('k').style.background="black";
+						document.getElementById('p').style.background="white";
+						}
+				}
+				if(peca=="l"){
+					if(k=="25"){
+						document.f.k.value=l;
+						document.f.l.value="25";
+						document.getElementById('l').style.background="black";
+						document.getElementById('k').style.background="white";
+					}
+					if(m=="25"){
+						document.f.m.value=l;
+						document.f.l.value="25";
+						document.getElementById('l').style.background="black";
+						document.getElementById('m').style.background="white";
+					}
+					if(g=="25"){
+						document.f.g.value=l;
+						document.f.l.value="25";
+						document.getElementById('l').style.background="black";
+						document.getElementById('g').style.background="white";
+					}
+					if(q=="25"){
+						document.f.q.value=l;
+						document.f.l.value="25";
+						document.getElementById('l').style.background="black";
+						document.getElementById('q').style.background="white";
+						}
+				}
+				if(peca=="m"){
+					if(l=="25"){
+						document.f.l.value=m;
+						document.f.m.value="25";
+						document.getElementById('m').style.background="black";
+						document.getElementById('l').style.background="white";
+					}
+					if(n=="25"){
+						document.f.n.value=m;
+						document.f.m.value="25";
+						document.getElementById('m').style.background="black";
+						document.getElementById('n').style.background="white";
+					}
+					if(h=="25"){
+						document.f.h.value=m;
+						document.f.m.value="25";
+						document.getElementById('m').style.background="black";
+						document.getElementById('h').style.background="white";
+					}
+					if(r=="25"){
+						document.f.r.value=m;
+						document.f.m.value="25";
+						document.getElementById('m').style.background="black";
+						document.getElementById('r').style.background="white";
+						}
+				}
+				if(peca=="n"){
+					if(m=="25"){
+						document.f.m.value=n;
+						document.f.n.value="25";
+						document.getElementById('n').style.background="black";
+						document.getElementById('m').style.background="white";
+					}
+					if(o=="25"){
+						document.f.o.value=n;
+						document.f.n.value="25";
+						document.getElementById('n').style.background="black";
+						document.getElementById('o').style.background="white";
+					}
+					if(i=="25"){
+						document.f.i.value=n;
+						document.f.n.value="25";
+						document.getElementById('n').style.background="black";
+						document.getElementById('i').style.background="white";
+					}
+					if(s=="25"){
+						document.f.s.value=n;
+						document.f.n.value="25";
+						document.getElementById('n').style.background="black";
+						document.getElementById('s').style.background="white";
+						}
+				}
+				if(peca=="o"){
+					if(n=="25"){
+						document.f.n.value=o;
+						document.f.o.value="25";
+						document.getElementById('o').style.background="black";
+						document.getElementById('n').style.background="white";
+					}
+					if(j=="25"){
+						document.f.j.value=o;
+						document.f.o.value="25";
+						document.getElementById('o').style.background="black";
+						document.getElementById('j').style.background="white";
+					}
+					if(t=="25"){
+						document.f.t.value=o;
+						document.f.o.value="25";
+						document.getElementById('o').style.background="black";
+						document.getElementById('t').style.background="white";
+						}
+				}
+				if(peca=="p"){
+					if(q=="25"){
+						document.f.q.value=p;
+						document.f.p.value="25";
+						document.getElementById('p').style.background="black";
+						document.getElementById('q').style.background="white";
+					}
+					if(k=="25"){
+						document.f.k.value=p;
+						document.f.p.value="25";
+						document.getElementById('p').style.background="black";
+						document.getElementById('k').style.background="white";
+					}
+					if(u=="25"){
+						document.f.u.value=p;
+						document.f.p.value="25";
+						document.getElementById('p').style.background="black";
+						document.getElementById('u').style.background="white";
+						}
+				}
+				if(peca=="q"){
+					if(p=="25"){
+						document.f.p.value=q;
+						document.f.q.value="25";
+						document.getElementById('q').style.background="black";
+						document.getElementById('p').style.background="white";
+					}
+					if(r=="25"){
+						document.f.r.value=q;
+						document.f.q.value="25";
+						document.getElementById('q').style.background="black";
+						document.getElementById('r').style.background="white";
+					}
+					if(l=="25"){
+						document.f.l.value=q;
+						document.f.q.value="25";
+						document.getElementById('q').style.background="black";
+						document.getElementById('l').style.background="white";
+					}
+					if(v=="25"){
+						document.f.v.value=q;
+						document.f.q.value="25";
+						document.getElementById('q').style.background="black";
+						document.getElementById('v').style.background="white";
+						}
+				}
+				if(peca=="r"){
+					if(q=="25"){
+						document.f.q.value=r;
+						document.f.r.value="25";
+						document.getElementById('r').style.background="black";
+						document.getElementById('q').style.background="white";
+					}
+					if(s=="25"){
+						document.f.s.value=r;
+						document.f.r.value="25";
+						document.getElementById('r').style.background="black";
+						document.getElementById('s').style.background="white";
+					}
+					if(m=="25"){
+						document.f.m.value=r;
+						document.f.r.value="25";
+						document.getElementById('r').style.background="black";
+						document.getElementById('m').style.background="white";
+					}
+					if(w=="25"){
+						document.f.w.value=r;
+						document.f.r.value="25";
+						document.getElementById('r').style.background="black";
+						document.getElementById('w').style.background="white";
+						}
+				}
+				if(peca=="s"){
+					if(r=="25"){
+						document.f.r.value=s;
+						document.f.s.value="25";
+						document.getElementById('s').style.background="black";
+						document.getElementById('r').style.background="white";
+					}
+					if(t=="25"){
+						document.f.t.value=s;
+						document.f.s.value="25";
+						document.getElementById('s').style.background="black";
+						document.getElementById('t').style.background="white";
+					}
+					if(n=="25"){
+						document.f.n.value=s;
+						document.f.s.value="25";
+						document.getElementById('s').style.background="black";
+						document.getElementById('n').style.background="white";
+					}
+					if(x=="25"){
+						document.f.x.value=s;
+						document.f.s.value="25";
+						document.getElementById('s').style.background="black";
+						document.getElementById('x').style.background="white";
+						}
+				}
+				if(peca=="t"){
+					if(s=="25"){
+						document.f.s.value=t;
+						document.f.t.value="25";
+						document.getElementById('t').style.background="black";
+						document.getElementById('s').style.background="white";
+					}
+					if(o=="25"){
+						document.f.o.value=t;
+						document.f.t.value="25";
+						document.getElementById('t').style.background="black";
+						document.getElementById('o').style.background="white";
+					}
+					if(y=="25"){
+						document.f.y.value=t;
+						document.f.t.value="25";
+						document.getElementById('t').style.background="black";
+						document.getElementById('y').style.background="white";
+						}
+				}
+				
+				if(peca=="u"){
+					if(v=="25"){
+						document.f.v.value=u;
+						document.f.u.value="25";
+						document.getElementById('u').style.background="black";
+						document.getElementById('v').style.background="white";
+					}
+					if(p=="25"){
+						document.f.p.value=u;
+						document.f.u.value="25";
+						document.getElementById('u').style.background="black";
+						document.getElementById('p').style.background="white";
+					}
+				}
+				if(peca=="v"){
+					if(u=="25"){
+						document.f.u.value=v;
+						document.f.v.value="25";
+						document.getElementById('v').style.background="black";
+						document.getElementById('u').style.background="white";
+					}
+					if(w=="25"){
+						document.f.w.value=v;
+						document.f.v.value="25";
+						document.getElementById('v').style.background="black";
+						document.getElementById('w').style.background="white";
+					}
+					if(q=="25"){
+						document.f.q.value=v;
+						document.f.v.value="25";
+						document.getElementById('v').style.background="black";
+						document.getElementById('q').style.background="white";
+						}
+				}
+				
+				if(peca=="w"){
+					if(v=="25"){
+						document.f.v.value=w;
+						document.f.w.value="25";
+						document.getElementById('w').style.background="black";
+						document.getElementById('v').style.background="white";
+					}
+					if(x=="25"){
+						document.f.x.value=w;
+						document.f.w.value="25";
+						document.getElementById('w').style.background="black";
+						document.getElementById('x').style.background="white";
+					}
+					if(r=="25"){
+						document.f.r.value=w;
+						document.f.w.value="25";
+						document.getElementById('w').style.background="black";
+						document.getElementById('r').style.background="white";
+						}
+				}
+				if(peca=="x"){
+					if(w=="25"){
+						document.f.w.value=x;
+						document.f.x.value="25";
+						document.getElementById('x').style.background="black";
+						document.getElementById('w').style.background="white";
+					}
+					if(y=="25"){
+						document.f.y.value=x;
+						document.f.x.value="25";
+						document.getElementById('x').style.background="black";
+						document.getElementById('y').style.background="white";
+					}
+					if(s=="25"){
+						document.f.s.value=x;
+						document.f.x.value="25";
+						document.getElementById('x').style.background="black";
+						document.getElementById('s').style.background="white";
+						}
+				}
+				if(peca=="y"){
+					if(x=="25"){
+						document.f.x.value=y;
+						document.f.y.value="25";
+						document.getElementById('y').style.background="black";
+						document.getElementById('x').style.background="white";
+					}
+					if(t=="25"){
+						document.f.t.value=y;
+						document.f.y.value="25";
+						document.getElementById('y').style.background="black";
+						document.getElementById('t').style.background="white";
+					}
+				}
+				
+				verificar();
+				
+			}
+			function embaralhar(){
+				bugcomeco=1;
+				document.f1.bagunca.disabled=true;
+				document.getElementById('a').style.background="white";
+				document.getElementById('b').style.background="white";
+				document.getElementById('c').style.background="white";
+				document.getElementById('d').style.background="white";
+				document.getElementById('e').style.background="white";
+				document.getElementById('f').style.background="white";
+				document.getElementById('g').style.background="white";
+				document.getElementById('h').style.background="white";
+				document.getElementById('i').style.background="white";
+				document.getElementById('j').style.background="white";
+				document.getElementById('k').style.background="white";
+				document.getElementById('l').style.background="white";
+				document.getElementById('m').style.background="white";
+				document.getElementById('n').style.background="white";
+				document.getElementById('o').style.background="white";
+				document.getElementById('p').style.background="white";
+				document.getElementById('q').style.background="white";
+				document.getElementById('r').style.background="white";
+				document.getElementById('s').style.background="white";
+				document.getElementById('t').style.background="white";
+				document.getElementById('u').style.background="white";
+				document.getElementById('v').style.background="white";
+				document.getElementById('w').style.background="white";
+				document.getElementById('x').style.background="white";
+				document.getElementById('y').style.background="white";
+				
+				for(z=1;z<1000;z++){
+					var ale=Math.floor(Math.random() * 4)+1;
+				var a=document.f.a.value;
+				var b=document.f.b.value;
+				var c=document.f.c.value;
+				var d=document.f.d.value;
+				var e=document.f.e.value;
+				var f=document.f.f.value;
+				var g=document.f.g.value;
+				var h=document.f.h.value;
+				var i=document.f.i.value;
+				var j=document.f.j.value;
+				var k=document.f.k.value;
+				var l=document.f.l.value;
+				var m=document.f.m.value;
+				var n=document.f.n.value;
+				var o=document.f.o.value;
+				var p=document.f.p.value;
+				var q=document.f.q.value;
+				var r=document.f.r.value;
+				var s=document.f.s.value;
+				var t=document.f.t.value;
+				var u=document.f.u.value;
+				var v=document.f.v.value;
+				var w=document.f.w.value;
+				var x=document.f.x.value;
+				var y=document.f.y.value;
+				
+				if(a=="25"){
+					if(ale=="2"){
+						document.f.a.value=b;
+						document.f.b.value="25";
+					}
+					if(ale=="4"){
+						document.f.a.value=f;
+						document.f.f.value="25";
+					}
+				}
+				if(b=="25"){
+					if(ale=="1"){
+						document.f.b.value=a;
+						document.f.a.value="25";
+					}
+					if(ale=="2"){
+						document.f.b.value=c;
+						document.f.c.value="25";
+					}
+					if(ale=="4"){
+						document.f.b.value=g;
+						document.f.g.value="25";
+					}
+				}
+				if(c=="25"){
+					if(ale=="1"){
+						document.f.c.value=b;
+						document.f.b.value="25";
+					}
+					if(ale=="2"){
+						document.f.c.value=d;
+						document.f.d.value="25";
+					}
+					if(ale=="4"){
+						document.f.c.value=h;
+						document.f.h.value="25";
+					}
+				}
+				if(d=="25"){
+					if(ale=="1"){
+						document.f.d.value=d;
+						document.f.d.value="25";
+					}
+					if(ale=="2"){
+						document.f.d.value=e;
+						document.f.e.value="25";
+					}
+					if(ale=="4"){
+						document.f.d.value=i;
+						document.f.i.value="25";
+					}
+				}
+				if(e=="25"){
+					if(ale=="1"){
+						document.f.e.value=d;
+						document.f.d.value="25";
+					}
+					if(ale=="4"){
+						document.f.e.value=j;
+						document.f.j.value="25";
+					}
+				}
+				//L2
+				if(f=="25"){
+					if(ale=="2"){
+						document.f.f.value=g;
+						document.f.g.value="25";
+					}
+					if(ale=="3"){
+						document.f.f.value=a;
+						document.f.a.value="25";
+					}
+					if(ale=="4"){
+						document.f.f.value=k;
+						document.f.k.value="25";
+					}
+				}
+				if(g=="25"){
+					if(ale=="1"){
+						document.f.g.value=f;
+						document.f.f.value="25";
+					}
+					if(ale=="2"){
+						document.f.g.value=h;
+						document.f.h.value="25";
+					}
+					if(ale=="3"){
+						document.f.g.value=b;
+						document.f.b.value="25";
+					}
+					if(ale=="4"){
+						document.f.g.value=l;
+						document.f.l.value="25";
+					}
+				}
+				
+				if(h=="25"){
+					if(ale=="1"){
+						document.f.h.value=g;
+						document.f.g.value="25";
+					}
+					if(ale=="2"){
+						document.f.h.value=i;
+						document.f.i.value="25";
+					}
+					if(ale=="3"){
+						document.f.h.value=c;
+						document.f.c.value="25";
+					}
+					if(ale=="4"){
+						document.f.h.value=m;
+						document.f.m.value="25";
+					}
+				}
+				if(i=="25"){
+					if(ale=="1"){
+						document.f.i.value=h;
+						document.f.h.value="25";
+					}
+					if(ale=="2"){
+						document.f.i.value=j;
+						document.f.j.value="25";
+					}
+					if(ale=="3"){
+						document.f.i.value=d;
+						document.f.d.value="25";
+					}
+					if(ale=="4"){
+						document.f.i.value=n;
+						document.f.n.value="25";
+					}
+				}
+				if(j=="25"){
+				if(ale=="1"){
+						document.f.j.value=i;
+						document.f.i.value="25";
+					}
+					if(ale=="3"){
+						document.f.j.value=e;
+						document.f.e.value="25";
+					}
+					if(ale=="4"){
+						document.f.j.value=o;
+						document.f.o.value="25";
+					}
+				}
+				//L3
+				if(k=="25"){
+					if(ale=="2"){
+						document.f.k.value=l;
+						document.f.l.value="25";
+					}
+					if(ale=="3"){
+						document.f.k.value=f
+						document.f.f.value="25";
+					}
+					if(ale=="4"){
+						document.f.k.value=p;
+						document.f.p.value="25";
+					}
+				}
+				if(l=="25"){
+					if(ale=="1"){
+						document.f.l.value=k;
+						document.f.k.value="25";
+					}
+					if(ale=="2"){
+						document.f.l.value=m;
+						document.f.m.value="25";
+					}
+					if(ale=="3"){
+						document.f.l.value=g;
+						document.f.g.value="25";
+					}
+					if(ale=="4"){
+						document.f.l.value=q;
+						document.f.q.value="25";
+					}
+				}
+				if(m=="25"){
+					if(ale=="1"){
+						document.f.m.value=l;
+						document.f.l.value="25";
+					}
+					if(ale=="2"){
+						document.f.m.value=n;
+						document.f.n.value="25";
+					}
+					if(ale=="3"){
+						document.f.m.value=h;
+						document.f.h.value="25";
+					}
+					if(ale=="4"){
+						document.f.m.value=r;
+						document.f.r.value="25";
+					}
+				}
+				if(n=="25"){
+					if(ale=="1"){
+						document.f.n.value=m;
+						document.f.m.value="25";
+					}
+					if(ale=="2"){
+						document.f.n.value=o;
+						document.f.o.value="25";
+					}
+					if(ale=="3"){
+						document.f.n.value=i;
+						document.f.i.value="25";
+					}
+					if(ale=="4"){
+						document.f.n.value=s;
+						document.f.s.value="25";
+					}
+				}
+				if(o=="25"){
+				if(ale=="1"){
+						document.f.o.value=n;
+						document.f.n.value="25";
+					}
+					if(ale=="3"){
+						document.f.o.value=j;
+						document.f.j.value="25";
+					}
+					if(ale=="4"){
+						document.f.o.value=t;
+						document.f.t.value="25";
+					}
+				}
+				//L4
+				if(p=="25"){
+					if(ale=="2"){
+						document.f.p.value=q
+						document.f.q.value="25";
+					}
+					if(ale=="3"){
+						document.f.p.value=k;
+						document.f.k.value="25";
+					}
+					if(ale=="4"){
+						document.f.p.value=u;
+						document.f.u.value="25";
+					}
+				}
+				if(q=="25"){
+					if(ale=="1"){
+						document.f.q.value=p;
+						document.f.p.value="25";
+					}
+					if(ale=="2"){
+						document.f.q.value=r;
+						document.f.r.value="25";
+					}
+					if(ale=="3"){
+						document.f.q.value=l;
+						document.f.l.value="25";
+					}
+					if(ale=="4"){
+						document.f.q.value=v;
+						document.f.v.value="25";
+					}
+				}
+				if(r=="25"){
+					if(ale=="1"){
+						document.f.r.value=q;
+						document.f.q.value="25";
+					}
+					if(ale=="2"){
+						document.f.r.value=s;
+						document.f.s.value="25";
+					}
+					if(ale=="3"){
+						document.f.r.value=m;
+						document.f.m.value="25";
+					}
+					if(ale=="4"){
+						document.f.r.value=w;
+						document.f.w.value="25";
+					}
+				}
+				if(s=="25"){
+					if(ale=="1"){
+						document.f.s.value=r;
+						document.f.r.value="25";
+					}
+					if(ale=="2"){
+						document.f.s.value=t;
+						document.f.t.value="25";
+					}
+					if(ale=="3"){
+						document.f.s.value=n;
+						document.f.n.value="25";
+					}
+					if(ale=="4"){
+						document.f.s.value=x;
+						document.f.x.value="25";
+					}
+				}
+				if(t=="25"){
+				if(ale=="1"){
+						document.f.t.value=s;
+						document.f.s.value="25";
+					}
+					if(ale=="3"){
+						document.f.t.value=o;
+						document.f.o.value="25";
+					}
+					if(ale=="4"){
+						document.f.t.value=y;
+						document.f.y.value="25";
+					}
+				}
+				//L5
+				if(u=="25"){
+					if(ale=="2"){
+						document.f.u.value=v;
+						document.f.v.value="25";
+					}
+					if(ale=="3"){
+						document.f.u.value=p;
+						document.f.p.value="25";
+					}
+				}
+				if(v=="25"){
+					if(ale=="1"){
+						document.f.v.value=u;
+						document.f.u.value="25";
+					}
+					if(ale=="2"){
+						document.f.v.value=w;
+						document.f.w.value="25";
+					}
+					if(ale=="3"){
+						document.f.v.value=q;
+						document.f.q.value="25";
+					}
+				}
+				if(w=="25"){
+					if(ale=="1"){
+						document.f.w.value=v;
+						document.f.v.value="25";
+					}
+					if(ale=="2"){
+						document.f.w.value=x;
+						document.f.x.value="25";
+					}
+					if(ale=="4"){
+						document.f.w.value=r;
+						document.f.r.value="25";
+					}
+				}
+				if(x=="25"){
+					if(ale=="1"){
+						document.f.x.value=w;
+						document.f.w.value="25";
+					}
+					if(ale=="2"){
+						document.f.x.value=y;
+						document.f.y.value="25";
+					}
+					if(ale=="3"){
+						document.f.x.value=s;
+						document.f.s.value="25";
+					}
+				}
+				if(y=="25"){
+					if(ale=="1"){
+						document.f.y.value=x;
+						document.f.x.value="25";
+					}
+					if(ale=="3"){
+						document.f.y.value=t;
+						document.f.t.value="25";
+					}
+				}
+			}
+				var a=document.f.a.value;
+				var b=document.f.b.value;
+				var c=document.f.c.value;
+				var d=document.f.d.value;
+				var e=document.f.e.value;
+				var f=document.f.f.value;
+				var g=document.f.g.value;
+				var h=document.f.h.value;
+				var i=document.f.i.value;
+				var j=document.f.j.value;
+				var k=document.f.k.value;
+				var l=document.f.l.value;
+				var m=document.f.m.value;
+				var n=document.f.n.value;
+				var o=document.f.o.value;
+				var p=document.f.p.value;
+				var q=document.f.q.value;
+				var r=document.f.r.value;
+				var s=document.f.s.value;
+				var t=document.f.t.value;
+				var u=document.f.u.value;
+				var v=document.f.v.value;
+				var w=document.f.w.value;
+				var x=document.f.x.value;
+				var y=document.f.y.value;
+				
+				if(a=="25"){
+				document.getElementById('a').style.background="black";
+				}
+				if(b=="25"){
+				document.getElementById('b').style.background="black";
+				}
+				if(c=="25"){
+				document.getElementById('c').style.background="black";
+				}
+				if(d=="25"){
+				document.getElementById('d').style.background="black";
+				}
+				if(e=="25"){
+				document.getElementById('e').style.background="black";
+				}
+				if(f=="25"){
+				document.getElementById('f').style.background="black";
+				}
+				if(g=="25"){
+				document.getElementById('g').style.background="black";
+				}
+				if(h=="25"){
+				document.getElementById('h').style.background="black";
+				}
+				if(i=="25"){
+				document.getElementById('i').style.background="black";
+				}
+				if(j=="25"){
+				document.getElementById('j').style.background="black";
+				}
+				if(k=="25"){
+				document.getElementById('k').style.background="black";
+				}
+				if(l=="25"){
+				document.getElementById('l').style.background="black";
+				}
+				if(m=="25"){
+				document.getElementById('m').style.background="black";
+				}
+				if(n=="25"){
+				document.getElementById('n').style.background="black";
+				}
+				if(o=="25"){
+				document.getElementById('o').style.background="black";
+				}
+				if(p=="25"){
+				document.getElementById('p').style.background="black";
+				}
+				if(q=="25"){
+				document.getElementById('q').style.background="black";
+				}
+				if(r=="25"){
+				document.getElementById('r').style.background="black";
+				}
+				if(s=="25"){
+				document.getElementById('s').style.background="black";
+				}
+				if(t=="25"){
+				document.getElementById('t').style.background="black";
+				}
+				if(u=="25"){
+				document.getElementById('u').style.background="black";
+				}
+				if(v=="25"){
+				document.getElementById('v').style.background="black";
+				}
+				if(w=="25"){
+				document.getElementById('w').style.background="black";
+				}
+				if(x=="25"){
+				document.getElementById('x').style.background="black";
+				}
+				if(y=="25"){
+				document.getElementById('y').style.background="black";
+				}
+				
+			}
 		</script>
-	</head>
+	
 	<body>
-		<h1>Jogo dos 24</h1>
+	<h1>Jogo dos 24</h1>
+	<form name="f" >
+	<input type="button" name="a" id="a" value="1" onclick="mover('a')">
+	<input type="button" name="b" id="b" value="2" onclick="mover('b')">
+	<input type="button" name="c" id="c" value="3" onclick="mover('c')">
+	<input type="button" name="d" id="d" value="4" onclick="mover('d')">
+	<input type="button" name="e" id="e" value="5" onclick="mover('e')">
 		<br>
-		
-		<h2>Em breve!!!!</h2>
-			
-	</body>
+	<input type="button" name="f" id="f" value="6" onclick="mover('f')">
+	<input type="button" name="g" id="g" value="7" onclick="mover('g')">
+	<input type="button" name="h" id="h" value="8" onclick="mover('h')">
+	<input type="button" name="i" id="i" value="9" onclick="mover('i')">
+	<input type="button" name="j" id="j" value="10" onclick="mover('j')">
+		<br>
+	<input type="button" name="k" id="k" value="11" onclick="mover('k')">
+	<input type="button" name="l" id="l" value="12" onclick="mover('l')">
+	<input type="button" name="m" id="m" value="13" onclick="mover('m')">
+	<input type="button" name="n" id="n" value="14" onclick="mover('n')">
+	<input type="button" name="o" id="o" value="15" onclick="mover('o')">
+		<br>
+	<input type="button" name="p" id="p" value="16" onclick="mover('p')" >
+	<input type="button" name="q" id="q" value="17" onclick="mover('q')">
+	<input type="button" name="r" id="r" value="18" onclick="mover('r')">
+	<input type="button" name="s" id="s" value="19" onclick="mover('s')">
+	<input type="button" name="t" id="t" value="20" onclick="mover('t')">
+		<br>
+	<input type="button" name="u" id="u" value="21" onclick="mover('u')">
+	<input type="button" name="v" id="v" value="22" onclick="mover('v')">
+	<input type="button" name="w" id="w" value="23" onclick="mover('w')">
+	<input type="button" name="x" id="x" value="24" onclick="mover('x')">
+	<input type="button" name="y" id="y" value="25" onclick="mover('y')" style="background-color:black;">
+	<br>
+	</form>
+	<form name="f1">
+	<input type="button" name="bagunca" value="embaralhar" onclick="embaralhar()" style="background-color:red; width:300px;">
+	</form>
+</body>
 </html>
