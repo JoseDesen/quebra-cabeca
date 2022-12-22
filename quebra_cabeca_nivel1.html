@@ -27,6 +27,8 @@
 		var seg=0;
 		var min=0;
 		var meuInterval;
+		var nome=sessionStorage.getItem('nome');
+
 		
 			function verificar(){
 				var a=document.f.a.value;
@@ -43,9 +45,9 @@
 					if(a=="1" && b=="2" && c=="3" && d=="4" && e=="5" && f=="6" && g=="7" && h=="8" && i=="9" ){
 					clearInterval(meuInterval);
 					if(min<1){
-						alert("Parabéns \nSeu tempo foi de:"+seg+" segundos");
+						alert("Nível fácil \nParabéns "+nome+" \nSeu tempo foi de:"+seg+" segundos");
 					}else{
-						alert("Parabéns \nSeu tempo foi de:"+min+" minutos e "+seg+" segundos");
+						alert("Nível fácil \n Parabéns "+nome+" \nSeu tempo foi de:"+min+" minutos e "+seg+" segundos");
 					}
 					document.f1.bagunca.disabled=false;
 					bugComeco=0;
