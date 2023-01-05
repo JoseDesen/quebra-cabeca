@@ -13,12 +13,15 @@
 				font-size:50px;
 				background-color:white;
 				color:black;
-			}
-			form{
-				background-color:black;
-				margin-left:23%;
-				margin-right:23%;
-				}
+		}
+		form{
+			background-color:black;
+			margin-left:23%;
+			margin-right:23%;
+		}
+		table{
+			font-size:25px;
+		}
 		</style>
 		<script type="text/javascript">
 		var bugComeco=0;
@@ -59,10 +62,19 @@
 				if(bugTempo==1){
 				if(a=="1" && b=="2" && c=="3" && d=="4" && e=="5" && f=="6" && g=="7" && h=="8" && i=="9" && j=="10" && k=="11" && l=="12" && m=="13" && n=="14" && o=="15" && p=="16"  && q=="17" && r=="18" && s=="19" && t=="20" && u=="21" && v=="22" && w=="23" && x=="24" && y=="25" ){
 					clearInterval(meuInterval);
-					if(min<1){
-						alert("Nível difícil \nParabéns "+nome+" \nSeu tempo foi de:"+seg+" segundos");
+					var tempo=min*60+seg;
+					if(tempo>180){
+						if(min<1){
+							alert("Nível difícil \nParabéns "+nome+" \nSeu tempo foi de:"+seg+" segundos");
+						}else{
+							alert("Nível difícil \nParabéns "+nome+" \nSeu tempo foi de:"+min+" minutos e "+seg+" segundos");
+						}
 					}else{
-						alert("Nível difícil \nParabéns "+nome+" \nSeu tempo foi de:"+min+" minutos e "+seg+" segundos");
+						if(min<1){
+							alert("Nível difícil \nParabéns "+nome+" \nSeu tempo foi de:"+seg+" segundos \nTire um print e mande pra o desenvolvedor para que ele possa colocar seu tempo no ranking");
+						}else{
+							alert("Nível difícil \nParabéns "+nome+" \nSeu tempo foi de:"+min+" minutos e "+seg+" segundos \nTire um print e mande pra o desenvolvedor para que ele possa colocar seu tempo no ranking");
+						}
 					}
 					bugComeco=0;
 					bugTempo=0;
@@ -1331,5 +1343,24 @@
 	<form name="f1">
 	<input type="button" name="bagunca" value="embaralhar" onclick="embaralhar()" style="background-color:red; width:300px;">
 	</form>
+	<br><br><br><br>
+	<table border="1">
+	<tr>
+	<th colspan="3">ranking</th>
+	</tr>
+	<tr>
+	<td>1</td>
+	<td>José</td>
+	<td>2min 37s</td>
+	</tr>
+	<td>2</td>
+	<td>Maria</td>
+	<td>2min 41s</td>
+	</tr>
+	<td>3</td>
+	<td>José</td>
+	<td>3min</td>
+	</tr>
+	
 </body>
 </html>
