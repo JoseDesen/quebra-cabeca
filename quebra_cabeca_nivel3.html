@@ -66,9 +66,9 @@
 					var tempo=min*60+seg;
 					if(tempo>180){
 						if(min<1){
-							alert("Nível difícil \nParabéns "+nome+" \nSeu tempo foi de:"+seg+" segundos");
+							alert("Nível difícil \nParabéns "+nome+" \nSeu tempo foi de:"+seg+" segundos \nTente novamente em menos tempo pra entrar no ranking");
 						}else{
-							alert("Nível difícil \nParabéns "+nome+" \nSeu tempo foi de:"+min+" minutos e "+seg+" segundos");
+							alert("Nível difícil \nParabéns "+nome+" \nSeu tempo foi de:"+min+" minutos e "+seg+" segundos \nTente novamente em menos tempo pra entrar no ranking");
 						}
 					}else{
 						if(min<1){
@@ -1342,13 +1342,13 @@
 	</form>
 	<h2><div id="crono">Tempo:<br>00:00</div></h2>
 	<form name="f1">
-	<input type="button" name="bagunca" value="embaralhar" onclick="embaralhar()" style="background-color:red; width:500px;">
+	<input type="button" name="bagunca" value="Embaralhar" onclick="embaralhar()" style="background-color:red; width:500px;">
 	</form>
 	<h2 style="background-color:red;color:White;position:absolute;top:90%;right:25%">Programado por :José Desenvolvedor</h2>
 	<br><br><br><br>
 	<table border="1">
 	<tr>
-	<th colspan="3">ranking</th>
+	<th colspan="3">Ranking</th>
 	</tr>
 
 	<tr>
