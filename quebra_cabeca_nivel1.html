@@ -9,19 +9,19 @@
 		text-align:center;
 		}
 		input{
-				height:100px;
-				width:100px;
-				font-size:50px;
-				background-color:white;
-				color:black;
+		height:100px;
+		width:100px;
+		font-size:50px;
+		background-color:white;
+		color:black;
 		}
 		form{
-			background-color:black;
-			margin-left:34%;
-			margin-right:34%;
+		background-color:black;
+		margin-left:34%;
+		margin-right:34%;
 		}
 		table{
-			font-size:25px;
+		font-size:25px;
 		}
 		</style>
 		<script type="text/javascript">
@@ -32,8 +32,6 @@
 		var min=0;
 		var meuInterval;
 		var nome=sessionStorage.getItem('nome');
-
-		
 			function verificar(){
 				var a=document.f.a.value;
 				var b=document.f.b.value;
@@ -51,9 +49,9 @@
 					var tempo=min*60+seg;
 					if(tempo>21){
 						if(min<1){
-							alert("Nível fácil \nParabéns "+nome+" \nSeu tempo foi de:"+seg+" segundos");
+							alert("Nível fácil \nParabéns "+nome+" \nSeu tempo foi de:"+seg+" segundos \nTente novamente em menos tempo pra entrar no ranking");
 						}else{
-							alert("Nível fácil \nParabéns "+nome+" \nSeu tempo foi de:"+min+" minutos e "+seg+" segundos");
+							alert("Nível fácil \nParabéns "+nome+" \nSeu tempo foi de:"+min+" minutos e "+seg+" segundos \nTente novamente em menos tempo pra entrar no ranking");
 						}
 					}else{
 						if(min<1){
@@ -526,12 +524,12 @@
 
 	<h2><div id="crono">Tempo:<br>00:00</div></h2>
 	<form name="f1">
-	<input type="button" name="bagunca" value="embaralhar" onclick="embaralhar()" style="background-color:red; width:300px;">
+	<input type="button" name="bagunca" value="Embaralhar" onclick="embaralhar()" style="background-color:red; width:300px;">
 	</form>
 	<br><br><br><br>
 	<table border="1">
 	<tr>
-	<th colspan="3">ranking</th>
+	<th colspan="3">Ranking</th>
 	</tr>
 	<tr>
 	<th>N°</th>
@@ -560,6 +558,5 @@
 	<td>21s</td>
 	</tr>
 	</table>
-
 </body>
 </html>
