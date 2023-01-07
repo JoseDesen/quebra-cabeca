@@ -18,7 +18,7 @@
 		</style>
 		<script>
 			var verificar=sessionStorage.getItem('nome');
-			if(verificar==null){
+			if(verificar==null && verificar==""){
 			var nome=prompt("Qual é seu nome?");
 			sessionStorage.setItem('nome',nome);
 }
@@ -27,11 +27,11 @@
 	<body bgcolor="red">
 			<h1>Quebra cabeça - jogo</h1>
 			</br>
-			<a href="quebra_cabeca_nivel1.html" >nivel fácil</a>
+			<a href="quebra_cabeca_nivel1.html" >Nível fácil</a>
 			</br>
-			<a href="quebra_cabeca_nivel2.html">nivel médio</a>
+			<a href="quebra_cabeca_nivel2.html">Nível médio</a>
 			</br>
-			<a href="quebra_cabeca_nivel3.html">nivel difícil</a>
+			<a href="quebra_cabeca_nivel3.html">Nível difícil</a>
 			
 	<h2 style="background-color:red;position:absolute;top:90%;right:25%">Programado por :José Desenvolvedor</h2>
 
