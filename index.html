@@ -18,7 +18,7 @@
 		</style>
 		<script>
 			var verificar=sessionStorage.getItem('nome');
-			if(verificar==null && verificar==""){
+			if(verificar==null || verificar==""){
 			var nome=prompt("Qual é seu nome?");
 			sessionStorage.setItem('nome',nome);
 }
