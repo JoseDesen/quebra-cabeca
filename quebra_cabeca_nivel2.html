@@ -847,7 +847,7 @@
 	
 	<body>
 	<h1>Jogo dos 15</h1>
-	<form name="f" >
+	<form name="f" id="idF">
 	<input type="button" name="a" id="a" value="1" onclick="mover('a')">
 	<input type="button" name="b" id="b" value="2" onclick="mover('b')">
 	<input type="button" name="c" id="c" value="3" onclick="mover('c')">
@@ -873,7 +873,7 @@
 	<h2 style="background-color:red;color:White;position:absolute;top:90%;right:25%">Programado por :José Desenvolvedor</h2>
 
 	<h2><div id="crono">Tempo:<br>00:00</div></h2>
-	<form name="f1">
+	<form name="f1" id="idF1">
 	<input type="button" name="bagunca" value="Embaralhar" onclick="embaralhar()" style="background-color:red; width:400px;">
 	</form>
 	<br><br><br><br>
@@ -907,5 +907,13 @@
 	<td>José</td>
 	<td>1min 30s</td>
 	</tr>
+<script>
+var tamanhoForm=(window.innerWidth-450)/2;
+document.getElementById('idF').style.marginLeft=tamanhoForm;
+document.getElementById('idF').style.marginRight=tamanhoForm;
+document.getElementById('idF1').style.marginLeft=tamanhoForm;
+document.getElementById('idF1').style.marginRight=tamanhoForm;
+</script>
+
 </body>
 </html>
