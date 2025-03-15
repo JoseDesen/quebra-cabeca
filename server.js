@@ -53,9 +53,10 @@ app.post('/tempos/:id', async (req, res) => {
           const maiorTempo = await collection.find().sort({ tempo: -1 }).limit(1).toArray();
           await collection.deleteOne({ _id: maiorTempo[0]._id });
         }
-  
-    
-    res.send('Tempo e nome adicionados com sucesso');
+        res.send('Tempo e nome adicionados com sucesso');
+      }else{
+       res.status(400).send('O tempo enviado não é menor que os tempos já registrados');
+      }
   } catch (error) {
     console.error('Erro ao adicionar tempo e nome:', error);
     res.status(500).send('Erro interno no servidor');
