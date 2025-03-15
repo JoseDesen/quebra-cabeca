@@ -31,7 +31,39 @@
 		var min=0;
 		var meuInterval;
 		var nome=sessionStorage.getItem('nome');
-			function verificar(){
+			// Função para adicionar um novo tempo
+				async function adicionarTempo(nome, tempo) {
+					await fetch('/tempos', {
+						method: 'POST',
+						headers:{
+							 'Content-Type': 'application/json',
+							 }
+							 , body: JSON.stringify({ nome, tempo }),
+					});
+					// Atualiza a tabela de melhores tempos
+					exibirMelhoresTempos();
+				}
+				// Função para exibir os melhores tempos na tabela
+				async function exibirMelhoresTempos() {
+					const response = await fetch('/tempos'); 
+					const tempos = await response.json();
+					// Obtém a tabela de melhores tempos
+					const tabela = document.getElementById('melhores-tempos').getElementsByTagName('tbody')[0];
+					// Limpa a tabela  
+					tabela.innerHTML = '';
+					// Adiciona os tempos à tabela 
+					for (let i = 0; i < tempos.length; i++) {
+						const linha = tabela.insertRow();
+						const posicao = linha.insertCell();
+						const nome = linha.insertCell();
+						const tempo = linha.insertCell();
+						posicao.innerHTML = i + 1;
+						nome.innerHTML = tempos[i].nome;
+						tempo.innerHTML = tempos[i].tempo;
+					}
+				}	
+		
+		function verificar(){
 				var a=document.f.a.value;
 				var b=document.f.b.value;
 				var c=document.f.c.value;
@@ -45,7 +77,10 @@
 				if(bugTempo==1){
 					if(a=="1" && b=="2" && c=="3" && d=="4" && e=="5" && f=="6" && g=="7" && h=="8" && i=="9" ){
 					clearInterval(meuInterval);
+					
 					var tempo=min*60+seg;
+					adicionarTempo(nome,tempo);
+					
 					if(tempo>16){
 						if(min<1){
 							alert("Nível fácil \nParabéns "+nome+" \nSeu tempo foi de:"+seg+" segundos \nTente novamente em menos tempo pra entrar no ranking");
@@ -557,13 +592,9 @@
 	<td>16s</td>
 	</tr>
 	</table>
-<script>
-var tamanhoForm=(window.innerWidth-350)/2;
-document.getElementById('idF').style.marginLeft=tamanhoForm;
-document.getElementById('idF').style.marginRight=tamanhoForm;
-document.getElementById('idF1').style.marginLeft=tamanhoForm;
-document.getElementById('idF1').style.marginRight=tamanhoForm;
-</script>
+	<table id="melhores-tempos">
+
+	</table>
 
 </body>
 </html>
