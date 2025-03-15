@@ -59,7 +59,7 @@
 						const tempo = linha.insertCell();
 						posicao.innerHTML = i + 1;
 						nome.innerHTML = tempos[i].nome;
-						tempo.innerHTML = tempos[i].tempo;
+						tempo.innerHTML = tempos[i].tempo+"s";
 					}
 				}	
 		exibirMelhoresTempos();
@@ -595,7 +595,10 @@
 	<table id="melhores-tempos" border="1">
 		<thead>
 			<tr>
-				<th>Posição</th>
+				<th colspan="3">Ranking</th>
+			</tr>
+			<tr>
+				<th>N°</th>
 				<th>Nome</th>
 				<th>Tempo</th>
 			</tr>
