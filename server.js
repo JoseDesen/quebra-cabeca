@@ -25,14 +25,28 @@ async function connect() {
     process.exit(1); // Encerra o processo se a conexão falhar
   }
 }
-
 connect();
 app.post('/tempos/:id', async (req, res) => {
   try {
     const { id } = req.params;
     const { nome, tempo } = req.body;
     const collection = client.db('quebraCabeca').collection(`jogo_dos_${id}`);
-    await collection.insertOne({ nome, tempo });
+
+     // Obter os 5 melhores tempos ordenados
+      const melhoresTempos = await collection.find().sort({ tempo: 1 }).limit(5).toArray();
+  
+      // Verificar se o tempo é menor que o maior entre os 5 melhores
+      if (melhoresTempos.length < 5 || tempo < melhoresTempos[melhoresTempos.length - 1].tempo) {
+        // Adicionar o novo tempo
+        await collection.insertOne({ nome, tempo });
+  
+        // Se mais de 5 tempos forem salvos, remover o maior
+        if (melhoresTempos.length === 5) {
+          const maiorTempo = await collection.find().sort({ tempo: -1 }).limit(1).toArray();
+          await collection.deleteOne({ _id: maiorTempo[0]._id });
+        }
+  
+    
     res.send('Tempo e nome adicionados com sucesso');
   } catch (error) {
     console.error('Erro ao adicionar tempo e nome:', error);
