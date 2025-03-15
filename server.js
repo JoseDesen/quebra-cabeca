@@ -5,7 +5,8 @@ const cors = require('cors');
 const app = express();
 app.use(express.json());
 app.use(cors())
-const uri = 'mongodb+srv://joseDesen:jlrajlra@josedesen.myi4e.mongodb.net/?retryWrites=true&w=majority&appName=joseDesen';
+const uri = process.env.MONGO_URI;
+const porta = process.env.PORT;
 const client = new MongoClient(uri);
 async function connect() {
   await client.connect();
@@ -23,7 +24,7 @@ app.get('/tempos', async (req, res) => {
   const tempos = await collection.find().sort({ tempo: 1 }).limit(5).toArray();
   res.json(tempos);
 });
-app.listen(3750, () => {
-  console.log('Servidor rodando na porta 3750');
+app.listen(porta, () => {
+  console.log(`Servidor rodando na porta ${porta}`);
 });
 
