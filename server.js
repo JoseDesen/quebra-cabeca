@@ -27,7 +27,7 @@ async function connect() {
 }
 
 connect();
-app.post('/tempos:id', async (req, res) => {
+app.post('/tempos/:id', async (req, res) => {
   try {
     const { id } = req.params;
     const { nome, tempo } = req.body;
@@ -40,7 +40,7 @@ app.post('/tempos:id', async (req, res) => {
   }
 });
 
-app.get('/tempos:id', async (req, res) => {
+app.get('/tempos/:id', async (req, res) => {
   try {
     const { id } = req.params;
     const collection = client.db('quebraCabeca').collection(`jogo_dos_${id}`);
