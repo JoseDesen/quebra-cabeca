@@ -33,7 +33,7 @@
 		var nome=sessionStorage.getItem('nome');
 			// Função para adicionar um novo tempo
 				async function adicionarTempo(nome, tempo) {
-					await fetch('http://localhost:3000/tempos', {
+					await fetch('http://localhost:3750/tempos', {
 						method: 'POST',
 						headers:{
 							 'Content-Type': 'application/json',
@@ -45,7 +45,7 @@
 				}
 				// Função para exibir os melhores tempos na tabela
 				async function exibirMelhoresTempos() {
-					const response = await fetch('http://localhost:3000/tempos'); 
+					const response = await fetch('http://localhost:3750/tempos'); 
 					const tempos = await response.json();
 					// Obtém a tabela de melhores tempos
 					const tabela = document.getElementById('melhores-tempos').getElementsByTagName('tbody')[0];
