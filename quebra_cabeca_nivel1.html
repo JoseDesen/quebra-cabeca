@@ -33,15 +33,22 @@
 		var nome=sessionStorage.getItem('nome');
 			// Função para adicionar um novo tempo
 				async function adicionarTempo(nome, tempo) {
-					await fetch('https://quebra-cabeca-wjms.onrender.com/tempos/8', {
-						method: 'POST',
-						headers:{
-							 'Content-Type': 'application/json',
-							 }
-							 , body: JSON.stringify({ nome, tempo }),
-					});
-					// Atualiza a tabela de melhores tempos
+					try {
+				        const response = await fetch('https://quebra-cabeca-wjms.onrender.com/tempos/8', {
+				            method: 'POST',
+				            headers: {
+				                'Content-Type': 'application/json',
+				            },
+				            body: JSON.stringify({ nome, tempo }),
+				        });
+				        if (!response.ok) {
+				            throw new Error(`Erro na requisição: ${response.statusText}`);
+				        }
+				        // Atualiza a tabela de melhores tempos
 					exibirMelhoresTempos();
+					} catch (error) {
+						console.error('Erro ao adicionar tempo:', error);
+					}	
 				}
 				// Função para exibir os melhores tempos na tabela
 				async function exibirMelhoresTempos() {
