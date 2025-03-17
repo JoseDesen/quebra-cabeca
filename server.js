@@ -38,28 +38,32 @@ app.post('/tempos/:id', async (req, res) => {
   try {
     const { id } = req.params;
     const { nome, tempo } = req.body;
-    const collection = client.db('quebraCabeca').collection(`jogo_dos_${id}`);
-
-     // Obter os 5 melhores tempos ordenados
-      const melhoresTempos = await collection.find().sort({ tempo: 1 }).limit(5).toArray();
+    if (!nome || !tempo || typeof tempo !== 'number') {
+      return res.status(400).json({ erro: 'Dados inválidos: Nome ou tempo ausente ou mal formatado.' });
+    }else{
+      const collection = client.db('quebraCabeca').collection(`jogo_dos_${id}`);
   
+      // Obter os 5 melhores tempos ordenados
+      const melhoresTempos = await collection.find().sort({ tempo: 1 }).limit(5).toArray();
+    
       // Verificar se o tempo é menor que o maior entre os 5 melhores
       if (melhoresTempos.length < 5 || tempo < melhoresTempos[melhoresTempos.length - 1].tempo) {
         // Adicionar o novo tempo
         await collection.insertOne({ nome, tempo });
-  
+    
         // Se mais de 5 tempos forem salvos, remover o maior
-        if (melhoresTempos.length === 5) {
+        if (melhoresTempos.length === 5 && maiorTempo[0]._id) {
           const maiorTempo = await collection.find().sort({ tempo: -1 }).limit(1).toArray();
           await collection.deleteOne({ _id: maiorTempo[0]._id });
         }
-        res.send('Tempo e nome adicionados com sucesso');
-      }else{
-       res.status(400).send('O tempo enviado não é menor que os tempos já registrados');
-      }
+        res.json({ mensagem: 'Tempo e nome adicionados com sucesso' });
+        }else{
+         res.status(400).send('O tempo enviado não é menor que os tempos já registrados');
+        }
+    }
   } catch (error) {
     console.error('Erro ao adicionar tempo e nome:', error);
-    res.status(500).send('Erro interno no servidor');
+    res.status(500).json({erro:'Erro interno no servidor', detalhes: error.menssage});
   }
 });
 
