@@ -23,7 +23,9 @@
 			}	
 			var verificar=sessionStorage.getItem('nome');
 			if(verificar==null || verificar=="" || verificar=="null"){
-				var nome=prompt("Qual é seu nome?");
+				do{
+					var nome=prompt("Qual é seu nome?");
+				}while(nome!="" && nome!=null && nome!="null");
 				sessionStorage.setItem('nome',nome);
 				estressarSevidor()
 			}
