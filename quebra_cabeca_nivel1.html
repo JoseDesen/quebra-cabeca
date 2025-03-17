@@ -70,7 +70,20 @@
 						nome.innerHTML = tempos[i].nome;
 						tempo.innerHTML = tempos[i].tempo+"s";
 					}
-				}	
+				}
+			let counter = 0; // Inicializa o contador
+			const maxCalls = 20 ; // Define o número máximo de chamadas
+			
+			const intervalID = setInterval(() => {
+			    console.log("Função chamada!");
+			    counter++; // Incrementa o contador
+			
+			    if (counter === maxCalls) {
+			        clearInterval(intervalID); // Para o intervalo quando atingir o limite
+			        console.log("Fim das chamadas.");
+			    }
+			}, 1000); // 1000ms = 1 segundos
+
 		exibirMelhoresTempos();
 		function verificar(){
 				var a=document.f.a.value;
