@@ -52,9 +52,11 @@ app.post('/tempos/:id', async (req, res) => {
         await collection.insertOne({ nome, tempo });
     
         // Se mais de 5 tempos forem salvos, remover o maior
-        if (melhoresTempos.length === 5 && maiorTempo[0]._id) {
+        if (melhoresTempos.length === 5 ) {
           const maiorTempo = await collection.find().sort({ tempo: -1 }).limit(1).toArray();
-          await collection.deleteOne({ _id: maiorTempo[0]._id });
+          if (maiorTempo.length > 0 && maiorTempo[0]._id) {
+            await collection.deleteOne({ _id: maiorTempo[0]._id });
+          }
         }
         res.json({ mensagem: 'Tempo e nome adicionados com sucesso' });
         }else{
