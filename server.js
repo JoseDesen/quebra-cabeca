@@ -58,7 +58,7 @@ app.post('/tempos/:id', async (req, res) => {
         }
         res.json({ mensagem: 'Tempo e nome adicionados com sucesso' });
         }else{
-         res.status(400).send('O tempo enviado não é menor que os tempos já registrados');
+         res.status(304).send('O tempo enviado não é menor que os tempos já registrados');
         }
     }
   } catch (error) {
