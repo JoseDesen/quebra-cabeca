@@ -5,7 +5,7 @@ const cors = require('cors');
 const app = express();
 app.use(express.json());
 app.use(cors({
-  origin: 'https://josedesen.github.io/quebra-cabeca/quebra_cabeca_nivel1.html/',
+  origin: 'https://josedesen.github.io/quebra-cabeca',
   methods: ['GET', 'POST'],
 }))
 app.use((req, res, next) => {
