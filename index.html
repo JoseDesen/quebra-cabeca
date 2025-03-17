@@ -17,11 +17,16 @@
 			}
 		</style>
 		<script>
+			async function estressarSevidor() {	
+				const response = await fetch('https://quebra-cabeca-wjms.onrender.com/tempos/8'); 
+				const tempos = await response.json();
+			}	
 			var verificar=sessionStorage.getItem('nome');
 			if(verificar==null || verificar=="" || verificar=="null"){
-			var nome=prompt("Qual é seu nome?");
-			sessionStorage.setItem('nome',nome);
-}
+				var nome=prompt("Qual é seu nome?");
+				sessionStorage.setItem('nome',nome);
+				estressarSevidor()
+			}
 		</script>
 	</head>
 	<body bgcolor="red">
