@@ -31,6 +31,7 @@
 		var min=0;
 		var meuInterval;
 		var nome=sessionStorage.getItem('nome');
+		var maiorTempo=0;
 			// Função para adicionar um novo tempo
 				async function adicionarTempo(nome, tempo) {
 				    try {
@@ -69,6 +70,7 @@
 						posicao.innerHTML = i + 1;
 						nome.innerHTML = tempos[i].nome;
 						tempo.innerHTML = tempos[i].tempo+"s";
+						maiorTempo=tempos[4].tempo;
 					}
 				}
 			let counter = 0; // Inicializa o contador
@@ -104,7 +106,7 @@
 					let tempoInteiro=parseInt(tempo);
 					adicionarTempo(nome,tempoInteiro);
 					
-					if(tempo>16){
+					if(tempo>=maiorTempo){
 						if(min<1){
 							alert("Nível fácil \nParabéns "+nome+" \nSeu tempo foi de:"+seg+" segundos \nTente novamente em menos tempo pra entrar no ranking");
 						}else{
@@ -112,10 +114,11 @@
 						}
 					}else{
 						if(min<1){
-							alert("Nível fácil \nParabéns "+nome+" \nSeu tempo foi de:"+seg+" segundos \nTire um print e mande pra o desenvolvedor para que ele possa colocar seu tempo no ranking");
+							alert("Nível fácil \nParabéns "+nome+" \nSeu tempo foi de:"+seg+" segundos \nVocê entrou no ranking");
 						}else{
-							alert("Nível fácil \nParabéns "+nome+" \nSeu tempo foi de:"+min+" minutos e "+seg+" segundos \nTire um print e mande pra o desenvolvedor para que ele possa colocar seu tempo no ranking");
+							alert("Nível fácil \nParabéns "+nome+" \nSeu tempo foi de:"+min+" minutos e "+seg+" segundos \nVocê entrou no ranking");
 						}
+					exibirMelhoresTempos();
 					}
 					document.f1.bagunca.disabled=false;
 					bugComeco=0;
