@@ -31,6 +31,60 @@
 		var min=0;
 		var meuInterval;
 		var nome=sessionStorage.getItem('nome');
+			// Função para adicionar um novo tempo
+				async function adicionarTempo(nome, tempo) {
+				    try {
+				        const response = await fetch('https://quebra-cabeca-wjms.onrender.com/tempos/24', {
+				            method: 'POST',
+				            headers: {
+				                'Content-Type': 'application/json',
+				            },
+				            body: JSON.stringify({ nome, tempo }),
+				        });
+				        const data = await response.json();
+				        console.log('Resposta do servidor:', data);
+				        if (!response.ok) {
+				            throw new Error(`Erro: ${response.statusText}`);
+				        }
+				        exibirMelhoresTempos();
+				    } catch (error) {
+				        console.error('Erro ao adicionar tempo:', error);
+				    }
+				}
+
+				// Função para exibir os melhores tempos na tabela
+				async function exibirMelhoresTempos() {
+					const response = await fetch('https://quebra-cabeca-wjms.onrender.com/tempos/24'); 
+					const tempos = await response.json();
+					// Obtém a tabela de melhores tempos
+					const tabela = document.getElementById('melhores-tempos').getElementsByTagName('tbody')[0];
+					// Limpa a tabela  
+					tabela.innerHTML = '';
+					// Adiciona os tempos à tabela 
+					for (let i = 0; i < tempos.length; i++) {
+						const linha = tabela.insertRow();
+						const posicao = linha.insertCell();
+						const nome = linha.insertCell();
+						const tempo = linha.insertCell();
+						posicao.innerHTML = i + 1;
+						nome.innerHTML = tempos[i].nome;
+						tempo.innerHTML = tempos[i].tempo+"s";
+					}
+				}
+			let counter = 0; // Inicializa o contador
+			const maxCalls = 20 ; // Define o número máximo de chamadas
+			
+			const intervalID = setInterval(() => {
+			    exibirMelhoresTempos();
+			    counter++; // Incrementa o contador
+			
+			    if (counter === maxCalls) {
+			        clearInterval(intervalID); // Para o intervalo quando atingir o limite
+			        console.log("Fim das chamadas.");
+			    }
+			}, 1000); // 1000ms = 1 segundos
+
+		exibirMelhoresTempos();
 			function verificar(){
 				var a=document.f.a.value;
 				var b=document.f.b.value;
@@ -1380,13 +1434,23 @@
 	<td>José</td>
 	<td>3min</td>
 	</tr>
-<script>
-var tamanhoForm=(window.innerWidth-575)/2;
-document.getElementById('idF').style.marginLeft=tamanhoForm;
-document.getElementById('idF').style.marginRight=tamanhoForm;
-document.getElementById('idF1').style.marginLeft=tamanhoForm;
-document.getElementById('idF1').style.marginRight=tamanhoForm;
-</script>
+	</table>
+	<table id="melhores-tempos" border="1">
+		<thead>
+			<tr>
+				<th colspan="3">Ranking</th>
+			</tr>
+			<tr>
+				<th>N°</th>
+				<th>Nome</th>
+				<th>Tempo</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+		</tbody>
+	</table>
+
 
 </body>
 </html>
