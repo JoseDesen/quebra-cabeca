@@ -113,7 +113,7 @@
 					var tempo=min*60+seg;
 					let tempoInteiro=parseInt(tempo);
 					adicionarTempo(nome,tempoInteiro);
-					if(tempo>+maiorTempo){
+					if(tempo>=maiorTempo){
 						if(min<1){
 							alert("Nível médio \nParabéns "+nome+" \nSeu tempo foi de:"+seg+" segundos \nTente novamente em menos tempo pra entrar no ranking");
 						}else{
@@ -125,6 +125,7 @@
 						}else{
 							alert("Nível médio \nParabéns "+nome+" \nSeu tempo foi de:"+min+" minutos e "+seg+" segundos \nVocê entrou no ranking");
 						}
+					exibirMelhoresTempos();
 					}
 					bugComeco=0;
 					bugTempo=0;
