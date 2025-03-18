@@ -68,7 +68,9 @@
 						const tempo = linha.insertCell();
 						posicao.innerHTML = i + 1;
 						nome.innerHTML = tempos[i].nome;
-						tempo.innerHTML = tempos[i].tempo+"s";
+						const minutos= Math.floor(tempos[i].tempo/60)==0 ? "" : `${Math.floor(tempos[i].tempo/60)}min `;
+						const segundos= tempos[i].tempo%60==0 ? "" : `${tempos[i].tempo%60}s`
+						tempo.innerHTML = minutos+segundos;
 					}
 				}
 			let counter = 0; // Inicializa o contador
@@ -107,6 +109,8 @@
 				if(a=="1" && b=="2" && c=="3" && d=="4" && e=="5" && f=="6" && g=="7" && h=="8" && i=="9" && j=="10" && k=="11" && l=="12" && m=="13" && n=="14" && o=="15" && p=="16"){
 					clearInterval(meuInterval);
 					var tempo=min*60+seg;
+					let tempoInteiro=parseInt(tempo);
+					adicionarTempo(nome,tempoInteiro);
 					if(tempo>90){
 						if(min<1){
 							alert("Nível médio \nParabéns "+nome+" \nSeu tempo foi de:"+seg+" segundos \nTente novamente em menos tempo pra entrar no ranking");
