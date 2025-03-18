@@ -113,11 +113,11 @@
 					var tempo=min*60+seg;
 					let tempoInteiro=parseInt(tempo);
 					adicionarTempo(nome,tempoInteiro);
-					if(tempo>90){
+					if(tempo>+maiorTempo){
 						if(min<1){
 							alert("Nível médio \nParabéns "+nome+" \nSeu tempo foi de:"+seg+" segundos \nTente novamente em menos tempo pra entrar no ranking");
 						}else{
-							alert("Nível médio \nParabéns "+nome+" \nSeu tempo foi de:"+min+" minutos e "+seg+" segundos \nTente novamente em menos tempo pra entrar no ranking"+maiorTempo);
+							alert("Nível médio \nParabéns "+nome+" \nSeu tempo foi de:"+min+" minutos e "+seg+" segundos \nTente novamente em menos tempo pra entrar no ranking");
 						}
 					}else{
 						if(min<1){
