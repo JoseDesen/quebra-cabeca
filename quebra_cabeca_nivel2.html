@@ -34,7 +34,7 @@
 			// Função para adicionar um novo tempo
 				async function adicionarTempo(nome, tempo) {
 				    try {
-				        const response = await fetch('https://quebra-cabeca-wjms.onrender.com/tempos/8', {
+				        const response = await fetch('https://quebra-cabeca-wjms.onrender.com/tempos/15', {
 				            method: 'POST',
 				            headers: {
 				                'Content-Type': 'application/json',
@@ -54,7 +54,7 @@
 
 				// Função para exibir os melhores tempos na tabela
 				async function exibirMelhoresTempos() {
-					const response = await fetch('https://quebra-cabeca-wjms.onrender.com/tempos/8'); 
+					const response = await fetch('https://quebra-cabeca-wjms.onrender.com/tempos/15'); 
 					const tempos = await response.json();
 					// Obtém a tabela de melhores tempos
 					const tabela = document.getElementById('melhores-tempos').getElementsByTagName('tbody')[0];
@@ -959,13 +959,23 @@
 	<td>José</td>
 	<td>1min 30s</td>
 	</tr>
-<script>
-var tamanhoForm=(window.innerWidth-460)/2;
-document.getElementById('idF').style.marginLeft=tamanhoForm;
-document.getElementById('idF').style.marginRight=tamanhoForm;
-document.getElementById('idF1').style.marginLeft=tamanhoForm;
-document.getElementById('idF1').style.marginRight=tamanhoForm;
-</script>
+	</table>
+	<table id="melhores-tempos" border="1">
+		<thead>
+			<tr>
+				<th colspan="3">Ranking</th>
+			</tr>
+			<tr>
+				<th>N°</th>
+				<th>Nome</th>
+				<th>Tempo</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+		</tbody>
+	</table>
+
 
 </body>
 </html>
